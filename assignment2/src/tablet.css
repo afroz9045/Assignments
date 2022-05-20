@@ -1,0 +1,32 @@
+@media screen and (min-width: 576px) and (max-width: 799px) {
+  .card-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  div.card {
+    width: 100%;
+  }
+  div.card1 {
+    flex-basis: 40%;
+  }
+  div.card2 {
+    flex-basis: 40%;
+  }
+
+  div.card3 {
+    width: 100%;
+    flex-basis: 90%;
+  }
+
+  footer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .rule2 {
+    width: 90%;
+    margin: auto;
+  }
+}

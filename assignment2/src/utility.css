@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 100;
+  color: rgb(22, 21, 21);
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li {
+  margin: auto 5%;
+  list-style-type: none;
+}
+
+main{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+.card {
+  width: 30%;
+  border: 1px solid gray;
+}
+.card-heading {
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding: 5px 10px;
+  background-color: #f6f6f6;
+  border-bottom: 2px solid lightgray;
+}
+
+.sentence1,
+.sentence2,
+.sentence3,
+.sentence4,
+.sentence5 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px;
+}
+.inner-card-content {
+  text-align: center;
+}
+
+.card-button {
+  font-weight: bold;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  /* padding: 5px 10px; */
+}
+.card-button button {
+  font-weight: bold;
+  width: 100%;
+  margin: auto;
+  padding: 5px 10px;
+}
+
+.big-sentence {
+  font-size: 2.2rem;
+}
+
+.month {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: gray;
+}
+
+button.sign-up-btn {
+  outline: 2px solid #327bf8;
+  background-color: inherit;
+  color: #327bf8;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 1%;
+}
+
+button.get-started-btn {
+  background-color: #2d72f7;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button.contact-us-btn {
+  background-color: #2d72f7;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+}
+
+.copy-right {
+  color: gray;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-heading {
+  font-weight: bold;
+}
+
+.footer-section {
+  width: 50%;
+}
