@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms Tasks</title>
+    <link rel="stylesheet" href="./forms.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./utility.css" />
+    <link rel="stylesheet" href="./medium-devices.css" />
+    <link rel="stylesheet" href="./large-devices.css" />
+    <!-- <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    /> -->
+  </head>
+  <body>
+    <!-- contact information -->
+    <h1 class="main-heading">Request For Quote</h1>
+    <form action="/">
+      <div class="contact-address-wrapper">
+        <h1 class="heading contact-heading">CONTACT INFORMATION</h1>
+        <div class="contact-info contact-information-section">
+          <div class="contact-input contact-information">
+              <input
+                type="text"
+                name="first-name"
+                placeholder="First"
+                required
+                minlength="3"
+                maxlength="10" autocomplete="off"
+              />
+            </div>
+            <div class="contact-input contact-information">
+              <input
+                type="text"
+                name="last-name"
+                placeholder="Last name*"
+                required
+                minlength="3"
+                maxlength="10" autocomplete="off"
+              />
+            </div>
+            <div class="contact-input contact-information">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="Email*"
+                pattern=".+@qualminds\.com|.+@gmail\.com" autocomplete="off"
+              />
+            </div>
+            <div class="contact-input contact-information">
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                required
+                placeholder="Phone*"
+                pattern="[0-9]{10}" autocomplete="off"
+              />
+            </div>
+          </div>
+        <!-- contact information end -->
+
+        <!-- Address -->
+        
+        <h1 class="heading address-heading">Address</h1>
+        <div class="contact-info contact-address-section">
+          <div class="contact-input contact-address street1">
+            <input
+              type="text"
+              name="street1"
+              id="street1"
+              placeholder="Street line 1*"
+              required autocomplete="off"
+            />
+          </div>
+          <div class="contact-input contact-address street2">
+            <input
+              type="text"
+              name="street2"
+              id="street2"
+              placeholder="Street line 2*"
+              required autocomplete="off"
+            />
+          </div>
+          <!-- here to placed -->
+          <div class="address-wrapper">
+            <div class="contact-input other-address">
+              <input
+                type="text"
+                name="city"
+                id="city"
+                placeholder="City*"
+                required autocomplete="off"
+              />
+            </div>
+            <div class="contact-input other-address">
+              <input
+                type="text"
+                name="state"
+                id="state"
+                placeholder="State/Province*"
+                required autocomplete="off"
+              />
+            </div>
+            <div class="contact-input other-address">
+              <input
+                type="text"
+                name="zip-code"
+                id="zip-code"
+                required
+                placeholder="Postal/Zip code*"
+                pattern="[0-9]{5}" autocomplete="off"
+              />
+            </div>
+            <div class="contact-input other-address select-container">
+              <select name="country" id="country" autocomplete="off">
+                <option value="--Please Select--">--Please Select--</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="china">china</option>
+                <option value="Australia">Australia</option>
+                <option value="France">France</option>
+              </select>
+              <label for="country*" class="country-label">Country*</label>
+            </div>
+          </div>
+          <!-- here to placed -->
+        </div>
+      </div>
+
+      <!-- Address end -->
+
+      <!-- Products -->
+      <div class="product-notes">
+      <h1 class="heading product-heading">Products</h1>
+        <div class="product-notes-wrapper contact-info product-wrapper">
+          <div class="product-name">
+            <input
+                type="text"
+                name="item-name"
+                required
+                placeholder="item #1 name"
+                pattern="[a-z]{6}" autocomplete="off"
+              />
+            </div>
+            <div class="product-item">
+              <input
+                type="text"
+                name="item-quantity"
+                placeholder="Item #1 quantity"
+                required
+                min="0" autocomplete="off"
+              />
+            </div>
+            <div class="product-name">
+              <input
+                type="text"
+                name="item-quantity"
+                required
+                placeholder="item #2 name"
+                pattern="[a-z]{6}" autocomplete="off"
+              />
+            </div>
+            <div class="product-item">
+              <input
+                type="text"
+                name="item-quantity"
+                placeholder="Item #2 quantity"
+                required
+                min="0" autocomplete="off"
+              />
+            </div>
+            <div class="product-name">
+              <input
+                type="text"
+                name="item-quantity"
+                required
+                placeholder="item #3 name"
+                pattern="[a-z]{6}" autocomplete="off"
+              />
+            </div>
+            <div class="product-item">
+              <input
+                type="text"
+                name="item-quantity"
+                placeholder="Item #3 quantity"
+                required
+                min="0" autocomplete="off"
+              />
+            </div>
+          </div>
+        
+        <!-- Products end -->
+
+        <!-- notes -->
+        <h1 class="heading notes-heading">Notes</h1>
+        <div class="container-fluid">
+          <p class="sub-heading">Additional comments or questions</p>
+          <div class="contact-info contact-notes-section">
+            <div class="textarea">
+              <textarea
+                name="comments"
+                rows="8"
+                cols="14"
+                maxlength="200" autocomplete="off"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- notes end -->
+
+      <div class="contact-info contact-btn">
+        <!-- <button value="REQUEST QUOTE" class="button"></button> -->
+        <button type="submit" class="button" id="button">REQUEST QUOTE</button>
+      </div>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>
