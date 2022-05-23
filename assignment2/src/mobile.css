@@ -1,70 +1,75 @@
-header{
-    width: 100%;
-    text-align: center;
+header {
+  width: 100%;
+  text-align: center;
 }
 
 /* header styling */
-header{
-    padding: 5px;
+header {
+  padding: 5px;
 }
-h1.main-heading{
-    font-size: 2.1rem;
-
+h1.main-heading {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
-
 
 /* header styling end*/
 
 /* nav styling */
-nav{
-    width: 80%;
-    margin: auto;
+nav {
+  width: 80%;
+  margin: auto;
 }
 
-nav ul{
-    width: 100%;
-    margin: auto;
-    padding-bottom: 2%;
-    display: flex;
-    justify-content: space-around;
+nav ul {
+  width: 100%;
+  font-weight: 300;
+  margin: auto;
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: space-around;
 }
 
 /* nav styling end*/
 
-
-/* hr styling */
-hr{
-    height: 1%;
-}
-/* hr styling end */
-
-h2.pricing{
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 100;
+h2.pricing {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
 }
 
-.pricing-para{
+.pricing-para {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+div.card {
+  width: 80%;
+  margin: 24px auto;
+}
+
+.copy-right {
+  flex-basis: 100%;
+}
+footer {
+  width: 80%;
+  margin: auto;
+}
+.header-nav-container {
+  border-bottom: 1px solid #dbdfe3;
+  padding-bottom: 3%;
+}
+
+h2.pricing {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+p.pricing-para{
     width: 80%;
     margin: auto;
-    text-align: center;
 }
 
-div.card{
-    width: 80%;
-    margin: 24px auto;
-}
-
-.copy-right{
-    flex-basis: 100%;
-}
-
-footer{
-    width: 80%;
-    margin: auto;
-}
-
-.rule2{
-    width: 80%;
-    margin: auto;
+button.card-button{
+    margin-top: 4%;
 }
