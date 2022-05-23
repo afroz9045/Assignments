@@ -66,4 +66,8 @@
       margin-right: auto;
 
   }
+  p.pricing-para {
+    width: 95%;
+    margin: auto;
+  }
 }
