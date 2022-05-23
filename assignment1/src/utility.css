@@ -8,6 +8,9 @@
 html {
   font-size: 16px;
 }
+body{
+  overflow-x: hidden;
+}
 
 h1.heading {
   width: 95%;
