@@ -22,8 +22,8 @@
   </head>
   <body>
     <!-- header starts here -->
-    <header class="bg-light py-4">
-      <div class="container container-md container-lg px-md-0 navigation-bar">
+    <header class="bg-light py-4 container-fluid">
+      <div class="container px-md-0 navigation-bar">
         <div class="row header-nav">
           <div class="col-5 col-md-1 col-lg-1 align-self-center logo">
             <h1 class="align-self-center">ZenBlog</h1>
@@ -33,7 +33,7 @@
             class="nav d-none d-md-block d-lg-block col-md-7 col-lg-7 pe-sm-0 align-self-center px-md-0"
           >
             <ul
-              class="list-unstyled d-flex align-self-center nav-ul mb-md-0 d-md-flex font-weight-bold"
+              class="list-unstyled d-flex nav-ul mb-md-0 d-md-flex font-weight-bold justify-content-around align-items-center"
             >
               <li>Blog</li>
               <li>Single Post</li>
@@ -43,7 +43,7 @@
             </ul>
           </nav>
           <div
-            class="header-icons align-self-center justify-content-sm-end col-7 col-md-4 col-lg-4 align-self-center px-md-0"
+            class="header-icons align-self-center justify-content-sm-end col-7 col-md-4 col-lg-4 align-self-center px-md-0 text-right"
           >
             <i class="fa-brands fa-facebook m-1"></i>
             <i class="fa-brands fa-twitter m-1"></i>
@@ -57,19 +57,18 @@
 
     <!-- header end here -->
 
-    <main>
+    <main class="container-fluid">
       <div class="wrapper container px-md-0 px-lg-0">
         <div class="row">
           <!-- part 1 start here -->
           <div
-            class="card container-fluid py-2 border-none container-md container-lg col-sm-12 col-md-4 col-lg-4"
+            class="card container-fluid py-2 border-0 container-md container-lg col-sm-12 col-md-4 col-lg-4"
           >
             <div class="row py-5 py-md-3">
               <img
                 src="http://placekitten.com/g/400/250"
                 alt="kitten"
-                width="100%"
-                class="img-fluid d-block"
+                class="img-fluid d-block w-100"
               />
               <small class="d-block col-sm-12 py-3"
                 >CULTURE . JUL 5TH '22</small
@@ -90,7 +89,7 @@
               <img
                 src="./images/profile.png"
                 alt="profile"
-                class="profile col-2 col-md-1 col-lg-1"
+                class="img-fluid profile col-2 col-md-1 col-lg-1 w-10"
               />
               <span
                 class="profile-name fs-5 col-10 col-md-11 col-lg-11 align-self-center ps-0"
@@ -114,8 +113,7 @@
                 <img
                   src="./images/sport.png"
                   alt="kitten"
-                  class="img-fluid d-block"
-                  width="100%"
+                  class="img-fluid d-block w-100"
                 />
                 <small class="d-block pt-4">SPORT . JUL 5TH '22</small>
                 <h2 class="fs-5 py-2">Let's Get Back to Work, New York</h2>
@@ -123,9 +121,8 @@
               <div class="post post2 col-sm-12">
                 <img
                   src="./images/food.png"
-                  width="100%"
                   alt="kitten"
-                  class="img-fluid d-block"
+                  class="img-fluid d-block w-100"
                 />
                 <small class="d-block pt-4">FOOD . JUL 17TH '22</small>
                 <h2 class="fs-5 py-2">
@@ -136,9 +133,8 @@
               <div class="post post3 col-sm-12">
                 <img
                   src="./images/design.png"
-                  width="100%"
                   alt="kitten"
-                  class="img-fluid d-block"
+                  class="img-fluid d-block w-100"
                 />
                 <small class="d-block pt-4">DESIGN . MAR 5TH '22</small>
                 <h2 class="fs-5 py-2">
@@ -150,9 +146,8 @@
               <div class="post post4">
                 <img
                   src="./images/business.png"
-                  width="100%"
                   alt="kitten"
-                  class="img-fluid d-block"
+                  class="img-fluid d-block w-100"
                 />
                 <small class="d-block pt-4">BUSINESS . JUL 5TH '22</small>
                 <h2 class="fs-5 py-2">
@@ -163,9 +158,8 @@
               <div class="post post5">
                 <img
                   src="./images/tech.png"
-                  width="100%"
                   alt="kitten"
-                  class="img-fluid d-block"
+                  class="img-fluid d-block w-100"
                 />
                 <small class="d-block pt-4">TECH . MAR 1ST '22</small>
                 <h2 class="fs-5 py-2">
@@ -176,9 +170,8 @@
               <div class="post post6">
                 <img
                   src="./images/travel.png"
-                  width="100%"
                   alt="kitten"
-                  class="img-fluid d-block"
+                  class="img-fluid d-block w-100"
                 />
                 <small class="d-block pt-4">TRAVEL . JUL 5TH '22</small>
                 <h2 class="fs-5 py-2">
@@ -196,10 +189,10 @@
           <!-- part 3 start here -->
 
           <div
-            class="trending container-fluid my-2 container-lg container-md col-sm-12 col-md-3 col-lg-3 py-md-3 py-5"
+            class="trending container-fluid my-2 col-sm-12 col-md-3 col-lg-3 py-md-3 py-5 ps-4"
           >
-            <div class="row container trending-list">
-              <ul class="list-group col-sm-12 pe-0">
+            <div class="row trending-list">
+              <ul class="list-group col-sm-12">
                 <li class="list-group-item py-md-4"><h2>Trending</h2></li>
                 <li class="list-group-item py-md-3 py-lg-3">
                   The Best Homemade Masks for Face(keep the Pimples Away)
@@ -227,8 +220,6 @@
             </div>
           </div>
           <!-- part 3 end here -->
-          <!-- ----------------------------------------------------------------------------------------- -->
-          <!-- ----------------------------------------------------------------------------------------- -->
         </div>
       </div>
     </main>
@@ -236,7 +227,7 @@
     <section class="bg-dark py-5 d-md-flex d-lg-flex container-fluid">
       <div class="section-wrapper container">
         <div class="row">
-          <div class="container-fluid about col-md-4 col-lg-4">
+          <div class="container-fluid about col-md-3 col-lg-3">
             <div class="row col-md-4 col-lg-4 about-row">
               <h3 class="text-white py-4 py-md-0 py-lg-0 px-md-0 px-lg-0">
                 About ZenBlog
@@ -251,9 +242,9 @@
             </div>
           </div>
 
-          <div class="container nav-cat col-md-4 col-lg-4">
+          <div class="container nav-cat col-md-6 col-lg-6">
             <div class="row d-flex nav-cat-row">
-              <div class="ul1">
+              <div class="ul1 w-50">
                 <ul class="text-white list-unstyled">
                   <h5 class="text-white col-sm-6">Navigation</h5>
                   <li>> Home</li>
@@ -265,7 +256,7 @@
                 </ul>
               </div>
 
-              <div class="ul2">
+              <div class="ul2 w-50">
                 <ul class="text-white list-unstyled col-sm-6 d-block">
                   <h5 class="text-white col-sm-6">Categories</h5>
                   <li>> Business</li>
@@ -281,31 +272,31 @@
             </div>
           </div>
 
-          <div class="container py-4 py-md-0 py-lg-0 col-md-4 col-lg-4">
+          <div class="container py-4 py-md-0 py-lg-0 col-md-3 col-lg-3">
             <div class="row recent-post-container recents-row">
               <h6 class="text-white fs-6 col-sm-12 px-md-0 px-lg-0">
                 Recent Posts
               </h6>
-              <div class="row my-3">
+              <div class="row my-3 d-flex">
                 <img
                   src="./images/business.png"
                   alt="business"
-                  class="col-2 img-fluid px-md-0 px-lg-0 d-block"
+                  class="col-2 col-md-5 img-fluid px-md-0 px-lg-0 d-block w-25 recent-post-pic"
                 />
-                <div class="text col-10">
+                <div class="text col-10 col-md-7 w-75">
                   <small>CULTURE . JUL 5TH '22</small>
                   <h6 class="text-white">
                     5 Great Startup Tips for Female Founders
                   </h6>
                 </div>
               </div>
-              <div class="row my-3">
+              <div class="row my-3 d-flex">
                 <img
                   src="./images/design.png"
                   alt="kitten"
-                  class="col-2 img-fluid px-md-0 px-lg-0 d-block"
+                  class="col-2 col-md-5 img-fluid px-md-0 px-lg-0 d-block w-25 recent-post-pic"
                 />
-                <div class="text col-10">
+                <div class="text col-10 col-md-7 w-75">
                   <small>CULTURE . JUL 5TH '22</small>
                   <h6 class="text-white px-md-0 px-lg-0">
                     What is the son of Football Coach John Gruden,Deuce Gruden
@@ -313,26 +304,26 @@
                   </h6>
                 </div>
               </div>
-              <div class="row my-3">
+              <div class="row my-3 d-flex">
                 <img
                   src="./images/food.png"
                   alt="kitten"
-                  class="col-2 px-md-0 px-lg-0 img-fluid d-block"
+                  class="col-2 col-md-5 px-md-0 px-lg-0 img-fluid d-block w-25 recent-post-pic"
                 />
-                <div class="text col-10">
+                <div class="text col-10 col-md-7 w-75">
                   <small>CULTURE . JUL 5TH '22</small>
                   <h6 class="text-white px-md-0 px-lg-0">
                     Life Insurance And Pregnancy: A Working Mom's Guide
                   </h6>
                 </div>
               </div>
-              <div class="row my-3">
+              <div class="row my-3 d-flex">
                 <img
                   src="./images/sport.png"
                   alt="kitten"
-                  class="col-2 px-md-0 px-lg-0 img-fluid d-block"
+                  class="col-2 col-md-5 px-md-0 px-lg-0 img-fluid d-block w-25 recent-post-pic"
                 />
-                <div class="text col-10">
+                <div class="text col-10 col-md-7 w-75">
                   <small>CULTURE . JUL 5TH '22</small>
                   <h6 class="text-white px-md-0 px-lg-0">
                     How to Avoid Distraction and Stay Focused During Video
@@ -346,7 +337,7 @@
       </div>
     </section>
 
-    <footer class="container-fluid px-4 py-4">
+    <footer class="container-fluid px-4 py-4 bg-black py-5">
       <div class="footer-row container d-md-flex d-lg-flex">
         <h6
           class="text-white fs-6 text-center text-md-start text-lg-start copyright"
@@ -357,15 +348,25 @@
           >
         </h6>
         <div class="footer-icons text-center text-md-end text-lg-end">
-          <i class="fa-brands fa-twitter text-white p-2"></i>
-          <i class="fa-brands fa-facebook-f text-white p-2"></i>
-          <i class="fa-brands fa-instagram text-white p-2"></i>
-          <i class="fa-brands fa-skype text-white p-2"></i>
-          <i class="fa-brands fa-linkedin text-white p-2"></i>
+          <i
+            class="fa-brands fa-twitter text-white p-2 rounded-circle bg-dark"
+          ></i>
+          <i
+            class="fa-brands fa-facebook-f text-white p-2 rounded-circle bg-dark"
+          ></i>
+          <i
+            class="fa-brands fa-instagram text-white p-2 rounded-circle bg-dark"
+          ></i>
+          <i
+            class="fa-brands fa-skype text-white p-2 rounded-circle bg-dark"
+          ></i>
+          <i
+            class="fa-brands fa-linkedin text-white p-2 rounded-circle bg-dark"
+          ></i>
         </div>
       </div>
       <span class="go-up py-2 px-3"
-        ><i class="fa-solid fa-arrow-up text-white"></i
+        ><i class="fa-solid fa-arrow-up text-white rounded bg-dark p-2"></i
       ></span>
     </footer>
   </body>
