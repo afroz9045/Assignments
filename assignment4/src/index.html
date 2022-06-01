@@ -77,9 +77,14 @@
 
             <div class="sort-by">
               <span>Sort by</span>
-              <select name="sort" id="sort">
+              <div class="custom-drop-down">
+                <span class="drop-down-default-text">Newest first</span>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <!-- <select name="sort" id="sort">
                 <option value="Newest first">Newest first</option>
-              </select>
+              </select> -->
             </div>
 
             <div class="search">
@@ -118,64 +123,70 @@
 
             <div class="nationality">
               <h2>Nationality:</h2>
-              <div>
-                <input type="checkbox" name="italian" id="italian" />
-                <label for="italian">Italian (34)</label>
+              <div class="part1">
+                <div>
+                  <input type="checkbox" name="italian" id="italian" />
+                  <label for="italian">Italian (34)</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="French" id="French" />
+                  <label for="French">French (30)</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="Spanish" id="Spanish" />
+                  <label for="Spanish">Spanish (22)</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="Peruvian" id="Peruvian" />
+                  <label for="Peruvian">Peruvian (3)</label>
+                </div>
               </div>
 
-              <div>
-                <input type="checkbox" name="French" id="French" />
-                <label for="French">French (30)</label>
+              <div class="part2">
+                <div>
+                  <input type="checkbox" name="chinese" id="chinese" />
+                  <label for="chinese">Chinese (18)</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="Indian" id="indian" />
+                  <label for="indian">Indian (13)</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="thai" id="thai" />
+                  <label for="thai">Thai (10)</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" name="Norwegian" id="norwegian" />
+                  <label for="norwegian">Norwegian (4)</label>
+                </div>
               </div>
 
-              <div>
-                <input type="checkbox" name="Spanish" id="Spanish" />
-                <label for="Spanish">Spanish (22)</label>
-              </div>
+              <div class="part3">
+                <div>
+                  <input type="checkbox" name="Polish" id="polish" />
+                  <label for="polish">Polish (2)</label>
+                </div>
 
-              <div>
-                <input type="checkbox" name="Peruvian" id="Peruvian" />
-                <label for="Peruvian">Peruvian (3)</label>
-              </div>
+                <div>
+                  <input type="checkbox" name="danish" id="danish" />
+                  <label for="danish">Danish (3)</label>
+                </div>
 
-              <div>
-                <input type="checkbox" name="chinese" id="chinese" />
-                <label for="chinese">Chinese (18)</label>
-              </div>
+                <div>
+                  <input type="checkbox" name="belgian" id="belgian" />
+                  <label for="belgian">Belgian (7)</label>
+                </div>
 
-              <div>
-                <input type="checkbox" name="Indian" id="indian" />
-                <label for="indian">Indian (13)</label>
-              </div>
-
-              <div>
-                <input type="checkbox" name="thai" id="thai" />
-                <label for="thai">Thai (10)</label>
-              </div>
-
-              <div>
-                <input type="checkbox" name="Norwegian" id="norwegian" />
-                <label for="norwegian">Norwegian (4)</label>
-              </div>
-
-              <div>
-                <input type="checkbox" name="Polish" id="polish" />
-                <label for="polish">Polish (2)</label>
-              </div>
-
-              <div>
-                <input type="checkbox" name="danish" id="danish" />
-                <label for="danish">Danish (3)</label>
-              </div>
-
-              <div>
-                <input type="checkbox" name="belgian" id="belgian" />
-                <label for="belgian">Belgian (7)</label>
-              </div>
-
-              <div>
-                <input type="checkbox" name="persian" id="persian" />
-                <label for="persian">Persian (13)</label>
+                <div>
+                  <input type="checkbox" name="persian" id="persian" />
+                  <label for="persian">Persian (13)</label>
+                </div>
               </div>
             </div>
           </div>

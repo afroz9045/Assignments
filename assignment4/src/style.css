@@ -1,336 +1,397 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    font-size: 16px;
-    color: #666666;
-    line-height: 1.5;
-    font-family: 'Roboto', sans-serif;
+html {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
 }
-main{
-    background-color: #f6f6f6;
+main {
+  background-color: #f6f6f6;
 }
-header{
-    width: 90%;
-    height: 10vh;
-    padding-top: 4%;
-    padding-bottom: 1.8%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header span{
-    display: inline-block;
-    width: 100%;
-    margin-left: 2%;
-    color: #e03052;
-}
-.logo{
-    width: 15%;
-    position: relative;
-    z-index: 1;
-    top: 45%;
-
+header {
+  width: 90%;
+  height: 10vh;
+  padding-top: 4%;
+  padding-bottom: 1.2%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.logo-img{
-    width: 100%;
+header span {
+  display: inline-block;
+  width: 100%;
+  margin-left: 2%;
+  color: #e03052;
+}
+.logo {
+  width: 15%;
+  position: relative;
+  z-index: 1;
+  top: 45%;
 }
 
-nav{
-    width: 100%;
-}
-nav ul{
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
-}
-nav ul li{
-    margin-right: 0%;
+.logo-img {
+  width: 100%;
 }
 
-.section1{
-    position: relative;
-    z-index: 0;
-    display: flex;
+nav {
+  align-self: end;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+nav ul li {
+  margin-right: 0%;
 }
 
-.latest-recipe-img{
-    width: 70%;
-}
-.latest-recipe-img img{
-    width: 100%;
-    height: 100%;
-}
-.latest-recipe-details{
-    width: 30%;
-    background-color: #e03052;
-    color: #fff;
-    padding: 3%;
+.section1 {
+  position: relative;
+  z-index: 0;
+  display: flex;
 }
 
-.latest-recipe-para{
-    font-size: 1.2rem;
+.latest-recipe-img {
+  width: 70%;
 }
-.latest-recipe-heading{
-    padding-top: 3%;
-    font-size: 2.5rem;
-    line-height: 1.2;
+.latest-recipe-img img {
+  width: 100%;
+  height: 100%;
 }
-
-.section1 p{
-    padding-top: 3%;
-    font-size: 1.5rem;
-}
-
-button.goto-recipe{
-    margin-top: 10%;
-    font-size: 1.2rem;
-    font-weight: 400;
-    background-color: #fff;
-    color: #494949;
-    padding: 5% 10%;
-    border: none;
-    border-radius: 5px;
+.latest-recipe-details {
+  width: 30%;
+  background-color: #e03052;
+  color: #fff;
+  padding: 3%;
 }
 
-.section2{
-    width: 90%;
-    margin: auto;
+.latest-recipe-para {
+  font-size: 1.2rem;
 }
-.categories{
-    padding: 2% auto;
-}
-.drop-down h1{
-    color: #494949;
-    font-size: 3rem;
+.latest-recipe-heading {
+  padding-top: 3%;
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 
-.filter{
-    position: relative;
-    width: 15%;
-    padding: 10px 10px 25px 10px;
-    background-color: #e03052;
-    color: #fff;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-.fa-minus{
-    position: absolute;
-    right: 5%;
-}
-.filter p{
-    width: 60%;
-    text-align: left;
+.section1 p {
+  padding-top: 3%;
+  font-size: 1.5rem;
 }
 
-.filter-recipes-by{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.filter,.search{
-    width: 20%;
-}
-.sort-by{
-    width: 50%;
-    padding-left: 2%
+button.goto-recipe {
+  margin-top: 10%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color: #fff;
+  color: #494949;
+  padding: 5% 10%;
+  border: none;
+  border-radius: 5px;
 }
 
-.sort-by select{
-    padding: 1% 5%;
-    margin-bottom: 3%;
-    background-color: #fff;
-    border: 1px solid;
-    border-radius: 5px;
+.section2 {
+  width: 90%;
+  margin: auto;
 }
-.search{
-    text-align: right;
-    margin-bottom: 2%;
+.categories {
+  padding: 2% auto;
 }
-.search-recipe{
-    padding-left: 3%;
+.categories h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
 }
-
-.categories{
-    display: flex;
-    background-color: #e03052;
+.drop-down h1 {
+  color: #494949;
+  font-size: 3rem;
+  padding: 0.5em 0;
 }
 
-.nationality{
-    width: 75%;
-    display: grid;
-    padding: 1%;
-    margin: 1% 0;
-    border-left: 1px solid #fff;
-    grid-template-columns: 33% 33% 33%;
+.filter {
+  position: relative;
+  width: 26em;
+  padding: 10px 10px 25px 10px;
+  background-color: #e14960;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
-.nationality h2{
-    grid-column-start: 1;
-    grid-column-end: 4;
+.fa-minus {
+  position: absolute;
+  right: 5%;
 }
-
-.categories{
-    color: #fff;
-}
-
-.categories input[type="checkbox"]{
-    cursor: pointer;
-    display: none;
-}
-.categories label{
-    cursor: pointer;
-}
-.food-type{
-    width: 20%;
-    padding: 1% 5% 1% 1%;
-    margin: 1% 0;
+.filter p {
+  width: 60%;
+  text-align: left;
 }
 
-.section3{
-    width: 90%;
-    margin: auto;
+.filter-recipes-by {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
-.cards-container{
-    padding: 5% 0;
-    padding-bottom: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.search {
+  width: 20%;
 }
-.card{
-    margin-bottom: 4%;
-    position: relative;
-    width: 22%;
+.sort-by {
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
-.card-heading h3{
-    padding: 5% 0;
+.sort-by span {
+  align-self: center;
 }
-.card-img{
-    width: 100%;
+.drop-down-default-text {
+  margin-left: 0.5em;
 }
-.card-img img{
-    width: 100%;
-    height: 100%;
+.fa-angle-down {
+  margin-left: 2em;
 }
-.card-info{
-    background-color: #fff;
-   padding: 5% 4%;
-   height: 8rem;
+.search {
+  width: 10%;
+  text-align: right;
+  align-self: center;
+  margin-bottom: 1em;
 }
-.card-country{
-    position: absolute;
-    right: 3%;
+.search-recipe {
+  padding-left: 3%;
 }
-.date-country{
-    font-size: 0.8rem;
-}
-.return-top{
-    width: 90%;
-    padding: 0 0 3% 0;
-    margin: auto;
-    color: #e03052;
-}
-.form{
-    width: 100%;
-    color: white;
-    background-color: #e03052;
-}
-.form-wrapper{
-    width: 90%;
-    padding: 2% 0;
-    margin: auto;
-}
-.form-wrapper h2{
-    padding: 10px 0;
-}
-.form-wrapper p{
-    padding: 10px 0;
-    width: 27%;
-}
-.form-wrapper label{
-    display: block;
-}
-.form1,.form2{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.form1{
-    padding-bottom: 2%;
-}
-.form2{
-    padding-top: 1%;
-}
-.input-field{
-    width: 25%;
-    border-radius: 5px;
-    
-}
-.input-field input,label{
-    width: 90%;
-}
-.input-field label{
-    padding: 2% 0;
-}
-.input-field input{
-    padding: 3% 2%;
-    border: none;
-    border-radius: 5px;
-}
-.form1{
-    border-bottom: 1px solid #fff;
-}
-.remove,.add-friend-btn{
-    text-align: center;
-    padding-top: 2%;
+.categories {
+  display: flex;
+  background-color: #e14960;
 }
 
-.add-friend-btn button{
-    margin-top: 5px;
-    width: 50%;
-    color: white;
-    margin: auto;
-    padding: 3% 2%;
-    background-color: inherit;
-    border-radius: 5px;
-    border: 1.5px solid white;
+.nationality {
+  width: 75%;
+  align-self: center;
+  display: flex;
+  padding: 1%;
+  margin: 1% 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.send-btn-container{
-    width: 50%;
-    margin: auto;
-    padding: 1% 0 2% 0;
-    margin: 2% auto 0 auto;
+.nationality h2 {
+  flex-basis: 100%;
 }
-.send-btn{
-    width: 15%;
-    margin-left: 40%;
-    padding: 1.5%;
-    background-color: white;
-    border: none;
-    border-radius: 3px;
-    color: #767676;
+.nationality .part1,
+.part2,
+.part3 {
+  width: 30%;
 }
-footer{
-    padding: 4% 0;
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+
+.categories {
+  color: #fff;
+  position: relative;
 }
-footer a{
-    color: #e03052;
+
+/* checkbox styling */
+.categories input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
 }
-footer p{
-    padding-top: 3%;
+.categories label {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
 }
-.part1,.part2,.part3,.part4,.part5{
-    width: 20%;
-  
+.categories label::before {
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.categories input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 3px rgb(255, 255, 255);
+}
+/* .categories label:hover::before,
+.categories input[type="checkbox"]:hover + label::before {
+  background-color: rgb(63, 60, 60);
+} */
+.categories input[type="checkbox"]:checked + label::before {
+  content: "\002714";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+/* checkbox styling end */
+
+.food-type {
+  width: 24.5em;
+  align-self: center;
+  margin: 1% 0;
+  border-right: 1px solid #fff;
+  margin: auto 0.5em;
+}
+
+.section3 {
+  width: 90%;
+  margin: auto;
+}
+.cards-container {
+  padding: 5% 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.card {
+  margin-bottom: 2em;
+  position: relative;
+  width: 25em;
+}
+.card-heading h3 {
+  padding: 5% 0;
+}
+.card-img {
+  width: 100%;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+.card-info {
+  background-color: #fff;
+  padding: 5% 0.5em;
+  height: 8rem;
+}
+.card-country {
+  position: absolute;
+  right: 3%;
+}
+.date-country {
+  font-size: 0.8rem;
+}
+.return-top {
+  width: 90%;
+  padding: 0 0 3% 0;
+  margin: auto;
+  color: #e25367;
+}
+.form {
+  width: 100%;
+  color: white;
+  background-color: #e03052;
+}
+.form-wrapper {
+  width: 90%;
+  padding: 2% 0;
+  margin: auto;
+}
+.form-wrapper h2 {
+  font-size: 2.2rem;
+  padding: 10px 0;
+}
+.form-wrapper p {
+  padding: 10px 0;
+  width: 27%;
+}
+.form-wrapper label {
+  display: block;
+}
+.form1,
+.form2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form1 {
+  padding-bottom: 2%;
+}
+.form2 {
+  padding-top: 1%;
+}
+.input-field {
+  width: 25%;
+  border-radius: 5px;
+}
+.input-field input,
+label {
+  width: 90%;
+}
+.input-field label {
+  padding: 2% 0;
+}
+.input-field input {
+  padding: 3% 2%;
+  border: none;
+  border-radius: 5px;
+}
+.custom-drop-down {
+  border: 2px solid black;
+  width: 15%;
+  padding: 0.5em;
+  margin-left: 1em;
+  border-radius: 0.3em;
+}
+.form1 {
+  border-bottom: 1px solid #fff;
+}
+.remove,
+.add-friend-btn {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.add-friend-btn button {
+  margin-top: 5px;
+  width: 50%;
+  color: white;
+  margin: auto;
+  padding: 3% 2%;
+  background-color: #e03052;
+  border-radius: 5px;
+  border: 1.5px solid white;
+}
+.send-btn-container {
+  width: 50%;
+  margin: auto;
+  padding: 1% 0 2% 0;
+  margin: 2% auto 0 auto;
+}
+.send-btn {
+  width: 25%;
+  margin-left: 40%;
+  padding: 1.5%;
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+  color: #767676;
+}
+footer {
+  padding: 4% 0;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+footer a {
+  color: #e25367;
+}
+footer p {
+  padding-top: 3%;
+}
+.part1,
+.part2,
+.part3,
+.part4,
+.part5 {
+  width: 18%;
 }
