@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
-  font-family: "EB", "Garamond";
 }
 
 html {
   font-size: 16px;
+  font-family: "EB Garamond", serif;
+  line-height: 1.5;
+}
+header{
+  background-color: #F2F2F2;
 }
 .header-icons {
   text-align: right;
@@ -13,6 +17,7 @@ html {
 .go-up {
   position: absolute;
   right: 3%;
+  cursor: pointer;
 }
 
 ul li {
@@ -25,9 +30,8 @@ small {
 }
 
 h2.initial-card-heading {
-  font-size: 2.5rem;
+  font-size: 2em;
 }
-
 ul.list-group {
   border-radius: 0%;
 }
@@ -50,7 +54,31 @@ li.list-group-item small {
 .recent-post-container h6 {
   font-size: 0.9rem;
 }
-
+.recent-row{
+  height: 4em;
+}
+.recent-row .text p{
+  font-size: .9em;
+  margin-left: 1em;
+}
+.recent-row .text small{
+  margin-left: 1em;
+}
+img.profile {
+  max-width: 3em;
+  border-radius: 50%;
+}
+span.profile-name {
+  width: 70%;
+}
+.fa-greater-than{
+  margin-right: 1em;
+  font-size: .8em;
+  font-weight: 550;
+}
+.footer-icons i{
+  cursor: pointer;
+}
 @media screen and (min-width: 768px) {
   header {
     border-top: 3px solid #5c5b5b;
@@ -73,10 +101,6 @@ li.list-group-item small {
   div.post {
     width: 50%;
   }
-  h2.initial-card-heading {
-    font-size: 1.5rem;
-  }
-
   div.logo {
     width: 20%;
   }
@@ -86,12 +110,14 @@ li.list-group-item small {
     align-items: center;
   }
   .nav-ul li {
+    cursor: pointer;
     align-self: center;
     padding-top: 0px;
   }
 
   div.header-icons {
     width: 19%;
+    cursor: pointer;
   }
   div.header-icons i {
     text-align: left;
@@ -112,13 +138,6 @@ li.list-group-item small {
   .card img {
     width: 100%;
   }
-  img.profile {
-    max-width: 70px;
-  }
-  span.profile-name {
-    width: 70%;
-  }
-
   div.trending-list {
     width: 100%;
   }
