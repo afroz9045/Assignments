@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  overflow-x: hidden;
+}
 html {
   font-size: 16px;
   font-weight: 400;
@@ -25,15 +27,16 @@ main {
   border: none;
   border-radius: 5px;
 }
-img{
+
+img {
   max-width: 100%;
   object-fit: cover;
 }
+
 header {
   width: 90%;
   height: 50px;
-  padding-top: 3em;
-  padding-bottom: 1.5em;
+  padding: 3em 10px 1.5em 10px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -88,16 +91,18 @@ nav ul {
   width: 30%;
   background-color: #e25367;
   color: #fff;
-  padding: 3em;
+  padding: 2em;
 }
 
 .section1 p {
   font-size: 1.2rem;
   margin-top: 1em;
+  width: 90%;
 }
 
 .latest-recipe-heading {
   padding-top: 3%;
+  width: 90%;
   font-size: 2rem;
   line-height: 1.2;
 }
@@ -108,6 +113,7 @@ nav ul {
 
 .section2 {
   width: 90%;
+  padding: 0 10px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -115,18 +121,20 @@ nav ul {
 
 .our-recipe {
   flex-basis: 100%;
+  padding: 1em 0;
+  font-size: 2.5em;
 }
 
 .section2-part1 {
   flex-basis: 30%;
-  border: 2px solid green;
+  background-color: #e25367;
 }
 
 .filter {
   display: flex;
   flex-basis: 25%;
-  padding: 1em 0 1em 1em;
-  background-color: #e25367;
+  padding: 1em 0 0 1em;
+  justify-content: space-between;
   color: #fff;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -140,10 +148,10 @@ nav ul {
 
 .food-type {
   align-self: center;
-  border-right: 1px solid gray;
+  border-right: .5px solid #fff;
+  padding: 0 1em;
+  margin: 2.5em 0;
   color: #fff;
-  background-color: #e25367;
-  padding: 0 0 0 1em;
 }
 
 /* checkbox styling */
@@ -184,7 +192,7 @@ input[type="checkbox"] {
 /* checkbox styling end */
 .section2-part2 {
   flex-basis: 70%;
-  border: 2px solid yellow;
+  background-color: #e25367;
 }
 
 .sort-by {
@@ -194,6 +202,7 @@ input[type="checkbox"] {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1em;
+  background-color: #f6f6f5;
 }
 
 .sort-by span {
@@ -201,10 +210,15 @@ input[type="checkbox"] {
 }
 
 .custom-drop-down {
-  border: 1px solid black;
   padding: 0.5em;
   margin-left: 1em;
   border-radius: 0.3em;
+}
+
+.food-type-heading,
+.nationality-heading {
+  display: block;
+  margin-bottom: .5em;
 }
 
 .search {
@@ -225,21 +239,23 @@ input[type="checkbox"] {
 
 .search-items input[placeholder] {
   font-size: 1.2em;
+  width: 55%;
   padding-left: .5em;
 }
 
 .nationality {
   display: flex;
   align-self: center;
-  padding-left: 2em;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: #e25367;
+  padding: 15px 10px;
   color: #fff;
 }
 
 .nationality-heading {
   flex-basis: 100%;
+  padding-left: 2em;
 }
 
 .nationality .part1,
@@ -254,6 +270,7 @@ input[type="checkbox"] {
 }
 
 .cards-container {
+  max-width: 100%;
   padding: 3em 0;
   padding-bottom: 0;
   display: flex;
@@ -266,17 +283,20 @@ input[type="checkbox"] {
   margin-bottom: 2em;
   position: relative;
   width: 25%;
-  padding: 0 15px;
-}
-.card-info {
-  background-color: #fff;
-  padding: 5% 0.5em;
-  height: 10rem;
+  padding: 0 10px;
 }
 
+.card-info {
+  background-color: #fff;
+  padding: 1em 0.5em;
+  height: 8rem;
+}
+.card-img{
+  max-width: 100%;
+}
 .date-country {
   margin: 1em;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .card-heading {
@@ -285,8 +305,7 @@ input[type="checkbox"] {
 
 .return-top {
   width: 90%;
-  padding: 0 0 3% 0;
-  margin: auto;
+  padding: 0 10px 2em 10px;
   color: #e25367;
 }
 
@@ -297,7 +316,7 @@ input[type="checkbox"] {
 
 .form-wrapper {
   width: 90%;
-  padding: 2% 0;
+  padding: 2em 10px;
   margin: auto;
 }
 
@@ -330,11 +349,18 @@ input[type="checkbox"] {
 
 .input-field {
   flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
+  padding-right: 30px;
+}
+
+.input-field label {
+  padding: .5em 0;
 }
 
 .input-field input {
-  padding: 3% 2%;
+  padding: 10px;
   border: none;
   border-radius: 3px;
 }
@@ -348,15 +374,22 @@ input[type="checkbox"] {
   padding-top: 2%;
 }
 
+.add-friend-btn {
+  align-self: flex-end;
+}
+
 .add-friend-btn button {
+  width: 50%;
+  margin: auto;
   color: white;
   background-color: #e25367;
   border: 1px solid white;
+
 }
 
 .send-btn {
   display: block;
-  margin: auto;
+  margin: 2.5em auto;
 }
 
 footer {
@@ -366,12 +399,16 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-.footer-section{
+
+.footer-section {
   flex-basis: 20%;
   text-align: justify;
   padding: 0 10px;
 }
+
 footer a {
+  display: block;
+  padding-top: 10px;
   color: #e25367;
 }
 

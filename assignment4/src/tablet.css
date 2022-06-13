@@ -1,0 +1,9 @@
+@media screen and (min-width:769px) and (max-width:1024px) {
+    .latest-recipe-img {
+        width: 50%;
+    }
+
+    .latest-recipe-details {
+        width: 50%;
+    }
+}
