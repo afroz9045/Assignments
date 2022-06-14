@@ -17,7 +17,12 @@ html {
 main {
   background-color: #f6f6f5;
 }
-
+button,a{
+  cursor: pointer;
+}
+button:active{
+  background-color: #cecece;
+}
 .btn {
   margin-top: 1.5em;
   font-size: 1.2rem;
@@ -29,7 +34,7 @@ main {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -45,8 +50,9 @@ header {
 
 .logo {
   display: flex;
-  flex-basis: 30%;
+  flex-basis: 40%;
   z-index: 1;
+  align-self: center;
   margin: 0 auto;
 }
 
@@ -70,11 +76,15 @@ nav {
 }
 
 nav ul {
+  flex-basis: 60%;
+  font-size: 1em;
   display: flex;
   list-style-type: none;
   justify-content: space-between;
 }
-
+nav ul li{
+  margin-left: 15px;
+}
 .section1 {
   display: flex;
 }
@@ -101,7 +111,7 @@ nav ul {
 }
 
 .latest-recipe-heading {
-  padding-top: 3%;
+  padding-top: 15px;
   width: 90%;
   font-size: 2rem;
   line-height: 1.2;
@@ -283,23 +293,27 @@ input[type="checkbox"] {
   margin-bottom: 2em;
   position: relative;
   width: 25%;
+  font-size: 12px;
   padding: 0 10px;
 }
 
 .card-info {
   background-color: #fff;
   padding: 1em 0.5em;
-  height: 8rem;
+  height: 10em;
 }
 .card-img{
   max-width: 100%;
 }
 .date-country {
+  display: flex;
+  justify-content: space-between;
   margin: 1em;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .card-heading {
+  /* height: 5em; */
   margin: 0 1em 1em 1em;
 }
 
@@ -339,12 +353,12 @@ input[type="checkbox"] {
 }
 
 .form1 {
-  padding-bottom: 2%;
+  padding-bottom: 30px;
   border-bottom: 1px solid #fff;
 }
 
 .form2 {
-  padding-top: 1%;
+  padding-top: 10px;
 }
 
 .input-field {
@@ -371,7 +385,7 @@ input[type="checkbox"] {
 
 .remove {
   text-align: center;
-  padding-top: 2%;
+  padding-top: 3em;
 }
 
 .add-friend-btn {
@@ -379,7 +393,7 @@ input[type="checkbox"] {
 }
 
 .add-friend-btn button {
-  width: 50%;
+  width: 70%;
   margin: auto;
   color: white;
   background-color: #e25367;
@@ -397,13 +411,14 @@ footer {
   width: 90%;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .footer-section {
   flex-basis: 20%;
   text-align: justify;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 footer a {
@@ -413,5 +428,5 @@ footer a {
 }
 
 footer p {
-  padding-top: 3%;
+  padding-top: 10px;
 }

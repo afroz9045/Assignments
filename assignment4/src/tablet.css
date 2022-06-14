@@ -1,9 +1,113 @@
-@media screen and (min-width:769px) and (max-width:1024px) {
+
+@media screen and (min-width:569px) and (max-width:1200px) {
+    nav ul {
+        font-size: .8em;
+    }
+
     .latest-recipe-img {
         width: 50%;
     }
 
     .latest-recipe-details {
         width: 50%;
+    }
+
+    .section2 {
+        font-size: .9em;
+    }
+
+    .section2-part1,
+    .section2-part2 {
+        flex-basis: 50%;
+        border-top: none;
+    }
+
+    .filter {
+        display: block;
+        background-color: #f6f6f5;
+        color: #464645;
+        font-weight: 500;
+        border-radius: 0;
+        padding-bottom: 30px;
+    }
+    .sort-by{
+        padding-bottom: 20px;
+        margin-bottom: 0;
+    }
+    .sort-search-wrapper {
+        border-top: none;
+    }
+
+    .food-type {
+        margin: 30px 0;
+    }
+
+    .food-type-heading,
+    .nationality-heading {
+        font-size: 1.2em;
+        font-weight: 700;
+
+    }
+
+    .nationality-heading {
+        padding-left: 1em;
+    }
+
+    .nationality {
+        padding: 10px;
+    }
+    .card {
+        flex-basis: 33.3%;
+    }
+    .card-heading{
+        font-size: .9em;
+    }
+
+    .form1,
+    .form2 {
+        flex-basis: 50%;
+        display: block;
+    }
+    .form1{
+        border: none;
+    }
+    .form2{
+        padding-top: 0;
+    }
+    .form-wrap {
+        display: flex;
+    }
+
+    .form-wrapper p {
+        width: 50%;
+    }
+
+    .add-friend-btn button {
+        margin-top: 2em;
+    }
+    .remove{
+        display: block;
+    }
+    .footer-section{
+        flex-basis: 50%;
+        padding: 10px 20px 
+        
+    }
+}
+@media screen and (min-width:569px) and (max-width:646px) {
+    .section2-part1{
+        flex-basis: 100%;
+    }
+    .section2-part2{
+        flex-basis: 100%;
+    }
+    .food-type{
+        border: none;
+    }
+    .card-heading{
+        font-size: .5em;
+    }
+    .date-country{
+        font-size: .5em;
     }
 }

@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 568px) {
     header {
         display: block;
         height: auto;
@@ -19,7 +19,7 @@
 
     nav ul li {
         margin: .5em 0;
-        font-weight: 700;
+        font-weight: 400;
     }
 
     .section1 {
@@ -41,7 +41,7 @@
 
     .food-type {
         border: none;
-        margin: 1em 0;
+        margin: .5em 0;
     }
 
     .custom-drop-down {
@@ -49,9 +49,15 @@
         padding-left: 0;
     }
 
+    .filter,
     .sort-by {
+        font-size: 1.2em;
         margin-left: 0;
-        padding: 0 0 .5em 0;
+        padding: .5em 0 .5em 0;
+    }
+
+    .nationality {
+        padding-top: 0;
     }
 
     .nationality-heading {
@@ -59,11 +65,21 @@
         padding-left: 0;
     }
 
-    .food-type input,
-    .food-type label,
-    .nationality input,
-    .nationality label {
-        font-size: .6em;
+    .section2 {
+        font-size: .7em;
+    }
+
+    .section2-part1,
+    .section2-part2 {
+        padding: .5em 0;
+    }
+.section2-part1{
+    padding-top: 0;
+}
+    .food-type-heading,
+    .nationality-heading {
+        font-size: 1.3em;
+        font-weight: 600;
     }
 
     .search-items input[placeholder] {
@@ -71,7 +87,7 @@
     }
 
     .search-items input[placeholder] {
-        width: 45%;
+        width: 50%;
     }
 
     .card {
@@ -89,7 +105,7 @@
     }
 
     .card-heading h3 {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .form-wrapper p {
@@ -102,12 +118,20 @@
     }
 
     .remove {
+        padding: 25px 0;
+        display: block;
+    }
+
+    .filter {
+        background-color: #f6f6f5;
+        border-radius: 0;
+        color: #464645;
         display: block;
     }
 
     .add-friend-btn button {
-        margin: 1em 0;
-        width: 100%;
+        margin: 30px auto;
+        width: 75%;
     }
 
     footer {
