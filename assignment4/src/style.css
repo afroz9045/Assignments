@@ -20,9 +20,6 @@ main {
 button,a{
   cursor: pointer;
 }
-button:active{
-  background-color: #cecece;
-}
 .btn {
   margin-top: 1.5em;
   font-size: 1.2rem;
@@ -221,7 +218,6 @@ input[type="checkbox"] {
 
 .custom-drop-down {
   padding: 0.5em;
-  margin-left: 1em;
   border-radius: 0.3em;
 }
 
@@ -259,19 +255,18 @@ input[type="checkbox"] {
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #e25367;
-  padding: 15px 10px;
+  padding: 15px 20px;
   color: #fff;
 }
 
 .nationality-heading {
   flex-basis: 100%;
-  padding-left: 2em;
 }
 
 .nationality .part1,
 .nationality .part2,
 .nationality .part3 {
-  flex-basis: 30%;
+  flex-basis: 33.3%;
 }
 
 .section3 {
@@ -313,7 +308,6 @@ input[type="checkbox"] {
 }
 
 .card-heading {
-  /* height: 5em; */
   margin: 0 1em 1em 1em;
 }
 
@@ -398,6 +392,7 @@ input[type="checkbox"] {
   color: white;
   background-color: #e25367;
   border: 1px solid white;
+  padding: 5px 10px;
 
 }
 
@@ -423,10 +418,15 @@ footer {
 
 footer a {
   display: block;
-  padding-top: 10px;
   color: #e25367;
 }
 
 footer p {
   padding-top: 10px;
+}
+button:active{
+  background-color: #cecece;
+}
+i:active{
+  color: #cecece;
 }

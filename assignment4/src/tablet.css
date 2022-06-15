@@ -1,4 +1,3 @@
-
 @media screen and (min-width:569px) and (max-width:1200px) {
     nav ul {
         font-size: .8em;
@@ -6,6 +5,10 @@
 
     .latest-recipe-img {
         width: 50%;
+    }
+
+    .section2 {
+        display: block;
     }
 
     .latest-recipe-details {
@@ -16,51 +19,63 @@
         font-size: .9em;
     }
 
-    .section2-part1,
-    .section2-part2 {
-        flex-basis: 50%;
-        border-top: none;
-    }
-
     .filter {
         display: block;
         background-color: #f6f6f5;
         color: #464645;
         font-weight: 500;
         border-radius: 0;
-        padding-bottom: 30px;
+        padding: 0 0 10px 0;
     }
-    .sort-by{
+
+    .sort-by {
         padding-bottom: 20px;
+        padding: 5px 0;
         margin-bottom: 0;
     }
+
+    .custom-drop-down {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
     .sort-search-wrapper {
         border-top: none;
     }
 
     .food-type {
-        margin: 30px 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .food-type div {
+        margin-right: 30px;
     }
 
     .food-type-heading,
     .nationality-heading {
+        flex-basis: 100%;
         font-size: 1.2em;
         font-weight: 700;
+        padding-left: 0;
+        margin-bottom: 5px;
 
-    }
-
-    .nationality-heading {
-        padding-left: 1em;
     }
 
     .nationality {
         padding: 10px;
     }
+
     .card {
         flex-basis: 33.3%;
     }
-    .card-heading{
-        font-size: .9em;
+
+    .date-country,
+    .card-heading {
+        font-size: .8em;
     }
 
     .form1,
@@ -68,12 +83,15 @@
         flex-basis: 50%;
         display: block;
     }
-    .form1{
+
+    .form1 {
         border: none;
     }
-    .form2{
+
+    .form2 {
         padding-top: 0;
     }
+
     .form-wrap {
         display: flex;
     }
@@ -85,29 +103,44 @@
     .add-friend-btn button {
         margin-top: 2em;
     }
-    .remove{
+
+    .remove {
         display: block;
     }
-    .footer-section{
+
+    .footer-section {
         flex-basis: 50%;
-        padding: 10px 20px 
-        
+        padding: 10px 20px
+    }
+
+    footer p,
+    footer a {
+        padding-top: 0;
+    }
+
+    .form2 .input-field {
+        padding-right: 0;
+    }
+
+    .input-field input[placeholder] {
+        font-size: .8em;
     }
 }
+
 @media screen and (min-width:569px) and (max-width:646px) {
-    .section2-part1{
+    .section2-part1 {
         flex-basis: 100%;
     }
-    .section2-part2{
+
+    .section2-part2 {
         flex-basis: 100%;
     }
-    .food-type{
+
+    .food-type {
         border: none;
     }
-    .card-heading{
-        font-size: .5em;
-    }
-    .date-country{
+
+    .card-heading {
         font-size: .5em;
     }
 }

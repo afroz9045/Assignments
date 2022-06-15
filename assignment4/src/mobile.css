@@ -1,5 +1,6 @@
 @media screen and (max-width: 568px) {
     header {
+        padding: 20px 10px;
         display: block;
         height: auto;
     }
@@ -10,7 +11,6 @@
     }
 
     nav ul {
-        /* background-color: rgb(231, 186, 167); */
         text-align: center;
         display: block;
         padding: .5em 0;
@@ -73,9 +73,11 @@
     .section2-part2 {
         padding: .5em 0;
     }
-.section2-part1{
-    padding-top: 0;
-}
+
+    .section2-part1 {
+        padding-top: 0;
+    }
+
     .food-type-heading,
     .nationality-heading {
         font-size: 1.3em;
@@ -105,7 +107,7 @@
     }
 
     .card-heading h3 {
-        font-size: 1.2em;
+        font-size: 1.7em;
     }
 
     .form-wrapper p {
@@ -136,5 +138,18 @@
 
     footer {
         display: block;
+    }
+
+    footer p,
+    footer a {
+        padding-top: 0;
+    }
+
+    .footer-section {
+        padding-bottom: 25px;
+    }
+
+    .input-field {
+        padding-right: 0;
     }
 }
