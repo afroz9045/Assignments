@@ -3,6 +3,10 @@
         font-size: .8em;
     }
 
+    .fa-bars {
+        display: none;
+    }
+
     .latest-recipe-img {
         width: 50%;
     }
@@ -128,6 +132,10 @@
 }
 
 @media screen and (min-width:569px) and (max-width:646px) {
+    nav ul {
+        font-size: .7em;
+    }
+
     .section2-part1 {
         flex-basis: 100%;
     }

@@ -13,32 +13,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mobile.css">
-  <link rel="stylesheet" href="tablet.css">
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/mobile.css" />
+  <link rel="stylesheet" href="./styles/tablet.css" />
   <title>Assignment 4</title>
 </head>
 
 <body>
   <!-- header start -->
-  <header>
-
-    <div class="logo">
-
-      <img src="./images/logo.png" alt="logo" class="logo-img" />
-      <span>The Grilled Prawn</span>
-
+  <header id="header">
+    <div class="logo-hamburger-wrapper">
+      <div class="logo">
+        <img src="./images/logo.png" alt="logo" class="logo-img" />
+        <span>The Grilled Prawn</span>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </div>
 
-    <nav>
+    <nav id="nav">
       <ul>
-        <li>RECIPES</li>
-        <li>DRINKS</li>
-        <li>DECORATIONS</li>
-        <li>ABOUT THE GRILLED PRAWN</li>
+        <li><a href="#">RECIPES</a></li>
+        <li><a href="#">DRINKS</a></li>
+        <li><a href="#">DECORATIONS</a></li>
+        <li><a href="#">ABOUT THE GRILLED PRAWN</a></li>
       </ul>
     </nav>
-
   </header>
   <!-- header end -->
 
@@ -46,7 +47,6 @@
   <main>
     <!-- section 1 -->
     <section class="section1">
-
       <div class="latest-recipe-img">
         <img src="./images/latest-recipe.jpg" alt="latest-recipe" />
       </div>
@@ -66,7 +66,6 @@
           Go to recipe <i class="fa-solid fa-arrow-right-long"></i>
         </button>
       </div>
-
     </section>
     <!-- section 1 end -->
 
@@ -112,22 +111,22 @@
             <div class="custom-drop-down">
               <span>Sort by</span>
               <select name="sort" id="sort" class="custom-drop-down">
-                <option value="Newest first" class="drop-down-default-text">Newest first</option>
+                <option value="Newest first" class="drop-down-default-text">
+                  Newest first
+                </option>
                 <option value="curriers">Curries</option>
                 <option value="Deserts">Deserts</option>
                 <option value="veggies">Veggies</option>
               </select>
             </div>
-            
-              <div class="search">
-                <div class="search-items">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                  <input type="text" class="search-recipe" placeholder="Search recipe">
-                </div>
-              </div>
-          </div>
 
-          
+            <div class="search">
+              <div class="search-items">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="search-recipe" placeholder="Search recipe" />
+              </div>
+            </div>
+          </div>
 
           <div class="nationality">
             <span class="nationality-heading">Nationality:</span>
@@ -198,9 +197,6 @@
             </div>
           </div>
         </div>
-
-
-
       </div>
     </section>
     <!-- section 2 end -->
@@ -396,7 +392,7 @@
         <span>Return to the top <i class="fa-solid fa-angle-up"></i></span>
       </div>
     </section>
-    
+
     <!-- section 3 end -->
 
     <!-- form -->
@@ -408,51 +404,57 @@
           friends to join the Gilled Prawn cult
         </p>
         <div class="form-wrap">
-        <div class="form1">
-          <div class="input-field">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="name" />
+         
+
+          <div class="form2">
+            <div class="input-field">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="name" />
+            </div>
+
+            <div class="input-field">
+              <label for="surname">Surname</label>
+              <input type="text" name="surname" id="surname" placeholder="Surname" />
+            </div>
+
+            <div class="input-field">
+              <label for="Email address">Email address</label>
+              <input type="email" name="mail" id="mail" placeholder="Email" />
+            </div>
+
+            <div class="add-friend-btn input-field">
+              <button class="btn">Add Friend</button>
+            </div>
           </div>
 
-          <div class="input-field">
-            <label for="surname">Surname</label>
-            <input type="text" name="surname" id="surname" placeholder="Surname" />
-          </div>
+          <div class="form1">
+            <div class="input-field">
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" placeholder="name" />
+            </div>
 
-          <div class="input-field">
-            <label for="Email address">Email address</label>
-            <input type="email" name="mail" id="mail" placeholder="Email" />
-          </div>
+            <div class="input-field">
+              <label for="surname">Surname</label>
+              <input type="text" name="surname" id="surname" placeholder="Surname" />
+            </div>
 
-          <div class="remove input-field">
-            <i class="fa-solid fa-trash"></i> Remove
+            <div class="input-field">
+              <label for="Email address">Email address</label>
+              <input type="email" name="mail" id="mail" placeholder="Email" />
+            </div>
+
+            <div class="remove input-field">
+              <i class="fa-solid fa-trash"></i> Remove
+            </div>
+            <table>
+              <thead></thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
-
-        <div class="form2">
-          <div class="input-field">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="name" />
-          </div>
-
-          <div class="input-field">
-            <label for="surname">Surname</label>
-            <input type="text" name="surname" id="surname" placeholder="Surname" />
-          </div>
-
-          <div class="input-field">
-            <label for="Email address">Email address</label>
-            <input type="email" name="mail" id="mail" placeholder="Email" />
-          </div>
-
-          <div class="add-friend-btn input-field">
-            <button class="btn">Add Friend</button>
-          </div>
-        </div>
-      </div>
-          <button class="send-btn btn">
-            Send <i class="fa-solid fa-arrow-right-long"></i>
-          </button>
+        <button class="send-btn btn">
+          Send <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
       </div>
     </div>
     <!-- form end -->
@@ -505,6 +507,7 @@
     </div>
   </footer>
   <!-- footer end -->
+  <script src="./script.js"></script>
 </body>
 
 </html>

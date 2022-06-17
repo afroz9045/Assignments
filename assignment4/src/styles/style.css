@@ -20,6 +20,11 @@ main {
 button,a{
   cursor: pointer;
 }
+nav ul li a{
+  text-decoration: none;
+  color: #464645;
+  font-weight: 500;
+}
 .btn {
   margin-top: 1.5em;
   font-size: 1.2rem;
@@ -47,12 +52,14 @@ header {
 
 .logo {
   display: flex;
-  flex-basis: 40%;
+  position: relative;
   z-index: 1;
   align-self: center;
   margin: 0 auto;
 }
-
+.fa-bars{
+  display: none;
+}
 .logo img {
   flex-basis: 30%;
   max-width: 4em;
@@ -61,7 +68,6 @@ header {
 .logo span {
   display: inline-block;
   flex-basis: 70%;
-  font-size: 1.2em;
   align-self: center;
   margin-left: .5em;
   color: #e25367;
