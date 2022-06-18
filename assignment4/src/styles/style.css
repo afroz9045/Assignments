@@ -23,7 +23,7 @@ button,a{
 nav ul li a{
   text-decoration: none;
   color: #464645;
-  font-weight: 500;
+  font-weight: 600;
 }
 .btn {
   margin-top: 1.5em;
@@ -36,14 +36,14 @@ nav ul li a{
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
 }
 
 header {
   width: 90%;
   height: 50px;
-  padding: 3em 10px 1.5em 10px;
+  padding: 50px 10px 30px 10px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -54,20 +54,17 @@ header {
   display: flex;
   position: relative;
   z-index: 1;
-  align-self: center;
   margin: 0 auto;
 }
 .fa-bars{
   display: none;
 }
-.logo img {
-  flex-basis: 30%;
-  max-width: 4em;
+.logo-img{
+  border-radius: 50%;
 }
 
 .logo span {
   display: inline-block;
-  flex-basis: 70%;
   align-self: center;
   margin-left: .5em;
   color: #e25367;
@@ -75,25 +72,27 @@ header {
 
 nav {
   align-self: center;
-  flex-basis: 70%;
 }
 
 nav ul {
-  flex-basis: 60%;
   font-size: 1em;
   display: flex;
   list-style-type: none;
   justify-content: space-between;
 }
 nav ul li{
-  margin-left: 15px;
+  align-self: center;
+  padding-right: 100px;
 }
 .section1 {
   display: flex;
+  flex-wrap: wrap;
 }
-
+nav ul li:last-child{
+  padding: 0;
+}
 .latest-recipe-img {
-  width: 70%;
+  flex-basis: 70%;
 }
 
 .latest-recipe-img img {
@@ -101,10 +100,10 @@ nav ul li{
 }
 
 .latest-recipe-details {
-  width: 30%;
+  flex-basis: 30%;
   background-color: #e25367;
   color: #fff;
-  padding: 2em;
+  padding: 10px 30px 50px 30px;
 }
 
 .section1 p {
@@ -126,7 +125,7 @@ nav ul li{
 
 .section2 {
   width: 90%;
-  padding: 0 10px;
+  padding: 20px 10px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -134,7 +133,7 @@ nav ul li{
 
 .our-recipe {
   flex-basis: 100%;
-  padding: 1em 0;
+  padding-bottom: 20px;
   font-size: 2.5em;
 }
 
@@ -142,7 +141,9 @@ nav ul li{
   flex-basis: 30%;
   background-color: #e25367;
 }
-
+.checkbox-container{
+  padding-bottom: 5px;
+}
 .filter {
   display: flex;
   flex-basis: 25%;

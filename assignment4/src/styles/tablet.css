@@ -1,14 +1,21 @@
 @media screen and (min-width:569px) and (max-width:1200px) {
     nav ul {
         font-size: .8em;
+        justify-content: center;
     }
 
+    header{
+        width: 100%;
+    }
+    nav ul li{
+        padding-right: 30px;
+    }
     .fa-bars {
         display: none;
     }
 
     .latest-recipe-img {
-        width: 50%;
+        flex-basis: 50%;
     }
 
     .section2 {
@@ -16,7 +23,7 @@
     }
 
     .latest-recipe-details {
-        width: 50%;
+        flex-basis: 50%;
     }
 
     .section2 {
@@ -131,7 +138,18 @@
     }
 }
 
-@media screen and (min-width:569px) and (max-width:646px) {
+@media screen and (min-width:569px) and (max-width:680px) {
+    header{
+        display: block;
+        height: auto;
+        padding: 10px 10px 20px 10px;
+    }
+    .latest-recipe-heading{
+        font-size: 1.5rem;
+    }
+    .logo{
+        justify-content: center;
+    }
     nav ul {
         font-size: .7em;
     }

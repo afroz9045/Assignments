@@ -20,6 +20,9 @@
     .logo {
         margin: auto auto auto 0;
     }
+    .logo span{
+        margin-left: 0;
+    }
 
     .hamburger {
         text-align: right;
@@ -45,6 +48,7 @@
     }
 
     nav ul li {
+        padding: 0;
         border-bottom: 1px solid #f6f6f5;
         margin: .5em 0;
         font-weight: 400;
@@ -54,6 +58,7 @@
     }
     nav ul li:last-child{
         border: none;
+        
         margin-bottom: 0;
     }
 
@@ -86,6 +91,7 @@
 
     .filter,
     .sort-by {
+        flex-basis: 33.3%;
         font-size: 1.2em;
         margin-left: 0;
         padding: .5em 0 .5em 0;
@@ -118,7 +124,9 @@
         font-size: 1.3em;
         font-weight: 600;
     }
-
+    .search{
+        flex-basis: 33.3%;
+    }
     .search-items input[placeholder] {
         font-size: .9em;
     }
