@@ -38,24 +38,19 @@
         border-radius: 0;
         padding: 0 0 10px 0;
     }
-
-    .sort-by {
-        padding-bottom: 20px;
-        padding: 5px 0;
-        margin-bottom: 0;
-    }
-
     .custom-drop-down {
         padding-left: 0;
         margin-left: 0;
     }
 
     .sort-search-wrapper {
+        display: block;
         border-top: none;
     }
 
     .food-type {
         margin: 0 auto;
+        border: none;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;

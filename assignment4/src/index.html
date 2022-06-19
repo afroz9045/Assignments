@@ -82,7 +82,29 @@
             <span>Filter recipes by</span>
             <i class="fa-solid fa-minus"></i>
           </div>
+          <div class="custom-drop-down">
+            <span>Sort by</span>
+            <select name="sort" id="sort" class="custom-drop-down">
+              <option value="Newest first" class="drop-down-default-text">
+                Newest first
+              </option>
+              <option value="curriers">Curries</option>
+              <option value="Deserts">Deserts</option>
+              <option value="veggies">Veggies</option>
+            </select>
+          </div>
 
+          <div class="search">
+            <div class="search-items">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" class="search-recipe" placeholder="Search recipe" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section2-part2">
+        <div class="sort-search-wrapper">
           <div class="food-type">
             <span class="food-type-heading">Food type:</span>
             <div class="checkbox-container">
@@ -105,31 +127,7 @@
               <label for="Special-Occasions">Special Occasions</label>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="section2-part2">
-        <div class="sort-search-wrapper">
-          <div class="sort-by">
-            <div class="custom-drop-down">
-              <span>Sort by</span>
-              <select name="sort" id="sort" class="custom-drop-down">
-                <option value="Newest first" class="drop-down-default-text">
-                  Newest first
-                </option>
-                <option value="curriers">Curries</option>
-                <option value="Deserts">Deserts</option>
-                <option value="veggies">Veggies</option>
-              </select>
-            </div>
-
-            <div class="search">
-              <div class="search-items">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" class="search-recipe" placeholder="Search recipe" />
-              </div>
-            </div>
-          </div>
-
+          <!--  -->
           <div class="nationality">
             <span class="nationality-heading">Nationality:</span>
             <div class="part1">
@@ -429,30 +427,24 @@
             </div>
           </div>
 
-          <div class="form1">
-            <div class="input-field">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" placeholder="name" />
-            </div>
-
-            <div class="input-field">
-              <label for="surname">Surname</label>
-              <input type="text" name="surname" id="surname" placeholder="Surname" />
-            </div>
-
-            <div class="input-field">
-              <label for="Email address">Email address</label>
-              <input type="email" name="mail" id="mail" placeholder="Email" />
-            </div>
-
-            <div class="remove input-field">
-              <i class="fa-solid fa-trash"></i> Remove
-            </div>
+          <!-- <div class="form1">
             <table>
-              <thead></thead>
-              <tbody></tbody>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Surname</td>
+                  <td>Email</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name here</td>
+                  <td>surname here</td>
+                  <td>email</td>
+              </tr>
+              </tbody>
             </table>
-          </div>
+          </div> -->
         </div>
         <button class="send-btn btn">
           Send <i class="fa-solid fa-arrow-right-long"></i>

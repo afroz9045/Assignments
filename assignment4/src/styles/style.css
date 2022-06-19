@@ -126,8 +126,8 @@ nav ul li:last-child{
 .section2 {
   width: 90%;
   padding: 20px 10px;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   margin: auto;
 }
 
@@ -144,16 +144,25 @@ nav ul li:last-child{
 .checkbox-container{
   padding-bottom: 5px;
 }
+.filter-recipes-by{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #f6f6f5;
+  border: none;
+}
 .filter {
   display: flex;
-  flex-basis: 25%;
-  padding: 1em 0 0 1em;
+  padding: 1em 0 1.5em 1em;
   justify-content: space-between;
   color: #fff;
+  background-color: #e25367;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-
+.filter{
+  flex-basis: 25%;
+}
 .fa-minus {
   flex-basis: 50%;
   padding-right: .5em;
@@ -165,6 +174,7 @@ nav ul li:last-child{
   border-right: .5px solid #fff;
   padding: 0 1em;
   margin: 2.5em 0;
+  flex-basis: 25%;
   color: #fff;
 }
 
@@ -208,34 +218,25 @@ input[type="checkbox"] {
   flex-basis: 70%;
   background-color: #e25367;
 }
-
-.sort-by {
-  flex-basis: 50%;
+.sort-search-wrapper{
   display: flex;
-  padding-left: 1em;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1em;
-  background-color: #f6f6f5;
-}
-
-.sort-by span {
-  align-self: center;
+  flex-wrap: wrap;
 }
 
 .custom-drop-down {
-  padding: 0.5em;
-  border-radius: 0.3em;
+  flex-basis: 37.5%;
+  padding: 10px 30px;
 }
 
 .food-type-heading,
 .nationality-heading {
-  display: block;
+  color: #fff;
   margin-bottom: .5em;
+  flex-basis: 100%;
 }
 
 .search {
-  margin-bottom: 1em;
+  flex-basis: 37.5%;
 }
 
 .search-recipe {
@@ -252,17 +253,18 @@ input[type="checkbox"] {
 
 .search-items input[placeholder] {
   font-size: 1.2em;
-  width: 55%;
+  width: 130px;
   padding-left: .5em;
 }
 
 .nationality {
   display: flex;
+  flex-basis: 75%;
   align-self: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #e25367;
-  padding: 15px 20px;
+  padding: 15px 30px;
   color: #fff;
 }
 
@@ -355,7 +357,7 @@ input[type="checkbox"] {
 
 .form1 {
   padding-bottom: 30px;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
 }
 
 .form2 {
