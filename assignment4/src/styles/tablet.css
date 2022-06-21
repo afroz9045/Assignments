@@ -17,7 +17,9 @@
     .latest-recipe-img {
         flex-basis: 50%;
     }
-
+    .latest-recipe-img img{
+        display: block;
+    }
     .section2 {
         display: block;
     }

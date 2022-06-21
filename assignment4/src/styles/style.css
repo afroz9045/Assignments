@@ -378,7 +378,7 @@ input[type="checkbox"] {
 .form1 {
   padding-bottom: 30px;
   margin-top: 30px;
-  border-top: 1px solid #fff;
+  /* border-top: 1px solid #fff; */
 }
 
 .form1 table {
@@ -391,14 +391,18 @@ input[type="checkbox"] {
 
 .form1 table thead {
   font-weight: 700;
+  /* color: #464645; */
+  background-color: #d87a85;
 
 }
 
 .form1 table td {
   padding: 10px 20px;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #ffffff;
 }
-
+.form1 table td i{
+  margin: 0 15px;
+}
 .form2 {
   padding-top: 10px;
 }
@@ -434,7 +438,7 @@ input[type="checkbox"] {
   align-self: flex-end;
 }
 
-.add-friend-btn button {
+.add-friend-btn .btn{
   width: 70%;
   margin: auto;
   color: white;
@@ -473,7 +477,7 @@ footer p {
   padding-top: 10px;
 }
 
-button:active {
+button:active,.btn:active{
   background-color: #cecece;
 }
 
