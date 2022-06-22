@@ -36,7 +36,8 @@ nav ul li a {
   font-size: 1.2rem;
   background-color: #fff;
   color: #494949;
-  padding: 10px 50px;
+  padding: 10px 15px;
+  /* padding: 10px 50px; */
   border: none;
   border-radius: 5px;
 }
@@ -99,6 +100,10 @@ nav ul li {
   flex-wrap: wrap;
 }
 
+.goto-recipe {
+  align-self: flex-start;
+}
+
 nav ul li:last-child {
   padding: 0;
 }
@@ -115,24 +120,27 @@ nav ul li:last-child {
   flex-basis: 30%;
   background-color: #e25367;
   color: #fff;
-  padding: 10px 30px 50px 30px;
+  padding: 25px 30px 35px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.latest-recipe-details p,
+h1,
+button {
+  padding-top: 15px;
 }
 
 .section1 p {
   font-size: 1.2rem;
-  margin-top: 1em;
   width: 90%;
 }
 
 .latest-recipe-heading {
-  padding-top: 15px;
   width: 90%;
   font-size: 2rem;
   line-height: 1.2;
-}
-
-.goto-recipe {
-  padding: 10px 15px;
 }
 
 .section2 {
@@ -190,7 +198,7 @@ nav ul li:last-child {
   align-self: center;
   border-right: .5px solid #fff;
   padding: 0 1em;
-  margin: 2.5em 0;
+  margin: 25px 0;
   flex-basis: 25%;
   color: #fff;
 }
@@ -248,9 +256,9 @@ input[type="checkbox"] {
 
 .food-type-heading,
 .nationality-heading {
+  display: block;
   color: #fff;
   margin-bottom: .5em;
-  flex-basis: 100%;
 }
 
 .search {
@@ -282,7 +290,7 @@ input[type="checkbox"] {
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #e25367;
-  padding: 15px 30px;
+  padding: 25px 30px;
   color: #fff;
 }
 
@@ -367,18 +375,23 @@ input[type="checkbox"] {
   width: 27%;
 }
 
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .form1,
 .form2 {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .form1 {
+  display: none;
   padding-bottom: 30px;
   margin-top: 30px;
-  /* border-top: 1px solid #fff; */
 }
 
 .form1 table {
@@ -391,18 +404,18 @@ input[type="checkbox"] {
 
 .form1 table thead {
   font-weight: 700;
-  /* color: #464645; */
   background-color: #d87a85;
-
 }
 
 .form1 table td {
   padding: 10px 20px;
   border: 1px solid #ffffff;
 }
-.form1 table td i{
+
+.form1 table td i {
   margin: 0 15px;
 }
+
 .form2 {
   padding-top: 10px;
 }
@@ -438,7 +451,7 @@ input[type="checkbox"] {
   align-self: flex-end;
 }
 
-.add-friend-btn .btn{
+.add-friend-btn .btn {
   width: 70%;
   margin: auto;
   color: white;
@@ -477,10 +490,14 @@ footer p {
   padding-top: 10px;
 }
 
-button:active,.btn:active{
+button:active,
+.btn:active {
   background-color: #cecece;
 }
 
 i:active {
   color: #cecece;
+}
+.table-hide{
+  display: none;
 }

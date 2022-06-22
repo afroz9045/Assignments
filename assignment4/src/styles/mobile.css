@@ -1,7 +1,7 @@
 @media screen and (max-width: 568px) {
     header {
         width: 100%;
-        padding: 20px 10px  10px;
+        padding: 20px 10px 10px;
         display: block;
         height: auto;
     }
@@ -20,7 +20,8 @@
     .logo {
         margin: auto auto auto 0;
     }
-    .logo span{
+
+    .logo span {
         margin-left: 0;
     }
 
@@ -53,12 +54,14 @@
         margin: .5em 0;
         font-weight: 400;
     }
-    nav ul li a{
+
+    nav ul li a {
         color: #fff;
     }
-    nav ul li:last-child{
+
+    nav ul li:last-child {
         border: none;
-        
+
         margin-bottom: 0;
     }
 
@@ -66,8 +69,13 @@
         display: block;
     }
 
-    .latest-recipe-img img{
-        display: block;
+    .latest-recipe-img {
+        height: 40vh;
+    }
+
+    .latest-recipe-img img {
+        max-width: 100%;
+        object-fit: cover;
     }
 
     .section2 {
@@ -79,18 +87,22 @@
         margin: .5em 0;
     }
 
+    .filter {
+        display: block;
+        flex-basis: 35%;
+    }
+
     .custom-drop-down {
-        flex-basis: 33.3%;
-        padding: 0;
+        display: flex;
+        flex-basis: 40%;
+        padding: 0 10px;
     }
 
-    .filter{
-        flex-basis: 33.3%;
-        margin-left: 0;
-        padding: .5em 0 .5em 0;
+    .search {
+        flex-basis: auto;
     }
 
-    .nationality{
+    .nationality {
         padding: 0 15px;
     }
 
@@ -102,9 +114,11 @@
     .section2 {
         font-size: .8em;
     }
-    .sort-search-wrapper{
+
+    .sort-search-wrapper {
         display: block;
     }
+
     .section2-part1,
     .section2-part2 {
         padding: .5em 0;
@@ -113,27 +127,29 @@
     .section2-part1 {
         padding-top: 0;
     }
-    .nationality .part1,.nationality .part2{
+
+    .nationality .part1,
+    .nationality .part2 {
         flex-basis: 50%;
     }
-    .nationality .part3{
+
+    .nationality .part3 {
         flex-basis: 100%;
         padding-top: 15px;
     }
+
     .food-type-heading,
     .nationality-heading {
         font-size: 1.3em;
         font-weight: 600;
     }
-    .search{
-        flex-basis: 33.3%;
-    }
+
     .search-items input[placeholder] {
         font-size: .9em;
     }
 
     .search-items input[placeholder] {
-        width: 78px
+        width: 80px
     }
 
     .card {
@@ -157,10 +173,26 @@
     .form-wrapper p {
         width: 70%;
     }
-
-    .form1,
     .form2 {
         display: block;
+        width: 100%;
+    }
+    .form1{
+        width: 100%;
+        display: none;
+    }
+    .form1,
+    .form1 table {
+        margin-top: 0;
+    }
+
+    .form1 table {
+        width: 100%;
+        font-size: .8em;
+    }
+
+    .form1 table td {
+        padding: 10px 5px;
     }
 
     .remove {
@@ -168,14 +200,7 @@
         display: block;
     }
 
-    .filter {
-        background-color: #f6f6f5;
-        border-radius: 0;
-        color: #464645;
-        display: block;
-    }
-
-    .add-friend-btn button {
+    .add-friend-btn .btn {
         margin: 30px auto;
         width: 75%;
     }
@@ -195,5 +220,9 @@
 
     .input-field {
         padding-right: 0;
+    }
+
+    .table-show {
+        display: block;
     }
 }

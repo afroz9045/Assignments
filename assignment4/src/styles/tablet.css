@@ -4,12 +4,14 @@
         justify-content: center;
     }
 
-    header{
+    header {
         width: 100%;
     }
-    nav ul li{
+
+    nav ul li {
         padding-right: 30px;
     }
+
     .fa-bars {
         display: none;
     }
@@ -17,9 +19,11 @@
     .latest-recipe-img {
         flex-basis: 50%;
     }
-    .latest-recipe-img img{
+
+    .latest-recipe-img img {
         display: block;
     }
+
     .section2 {
         display: block;
     }
@@ -32,16 +36,8 @@
         font-size: .9em;
     }
 
-    .filter {
-        display: block;
-        background-color: #f6f6f5;
-        color: #464645;
-        font-weight: 500;
-        border-radius: 0;
-        padding: 0 0 10px 0;
-    }
     .custom-drop-down {
-        padding-left: 0;
+        padding-left: 10;
         margin-left: 0;
     }
 
@@ -86,30 +82,44 @@
         font-size: .8em;
     }
 
-    .form1,
+    
     .form2 {
         flex-basis: 50%;
         display: block;
     }
 
     .form1 {
+        flex-basis: 50%;
+        display: none;
         border: none;
+        margin-top: 0;
+        flex-basis: 100%;
+    }
+
+    .form1 table {
+        margin-top: 15px;
+        width: 100%;
     }
 
     .form2 {
         padding-top: 0;
     }
 
-    .form-wrap {
-        display: flex;
-    }
-
     .form-wrapper p {
         width: 50%;
     }
 
-    .add-friend-btn button {
-        margin-top: 2em;
+    .form-wrap {
+        flex-direction: row;
+    }
+
+    .form-section {
+        flex-basis: 100%;
+    }
+
+    .add-friend-btn .btn {
+        margin: 30px auto;
+        width: 25%;
     }
 
     .remove {
@@ -133,20 +143,27 @@
     .input-field input[placeholder] {
         font-size: .8em;
     }
+
+    .table-show {
+        display: block;
+    }
 }
 
 @media screen and (min-width:569px) and (max-width:680px) {
-    header{
+    header {
         display: block;
         height: auto;
         padding: 10px 10px 20px 10px;
     }
-    .latest-recipe-heading{
+
+    .latest-recipe-heading {
         font-size: 1.5rem;
     }
-    .logo{
+
+    .logo {
         justify-content: center;
     }
+
     nav ul {
         font-size: .7em;
     }
@@ -165,5 +182,9 @@
 
     .card-heading {
         font-size: .8em;
+    }
+
+    .table-show {
+        display: block;
     }
 }
