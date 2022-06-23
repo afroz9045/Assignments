@@ -4,21 +4,17 @@ let hamIcon = document.querySelector(".fa-bars");
 let nav = document.querySelector("#nav");
 let form = document.getElementById("form");
 let tableContainer = document.querySelector(".form1");
+let inputField = document.querySelectorAll(".input");
+let addFriendBtn = document.querySelector("#addFriendBtn");
+let updateBtnToggle = document.querySelector(".updateBtnToggle");
+
+addFriendBtn.addEventListener("click", save);
+document.addEventListener("DOMContentLoaded", isTableLoad);
 
 hamburger.addEventListener("click", () => {
     nav.classList.toggle("visible");
     hamIcon.classList.toggle("fa-times");
-
 })
-
-let inputField = document.querySelectorAll(".input");
-let addFriendBtn = document.querySelector("#addFriendBtn");
-
-addFriendBtn.addEventListener("click", save);
-document.addEventListener("DOMContentLoaded", istableLoad);
-
-
-
 //validation
 function validate() {
     // debugger
@@ -92,28 +88,22 @@ function validate() {
 let arr = [];
 function save() {
     if (validate()) {
-
-
         debugger
         var name = document.getElementById("name").value;
         var surname = document.getElementById("surname").value;
         var email = document.getElementById("mail").value;
-
         var friendsObj = {
             name: name,
             surname: surname,
             email: email
         }
-
         arr.push(friendsObj);
         setData();
-        istableLoad();
-
+        isTableLoad();
         var name = document.getElementById("name").value = "";
         var surname = document.getElementById("surname").value = "";
         var email = document.getElementById("mail").value = "";
     }
-
 }
 function setData() {
     localStorage.setItem("friendsData", JSON.stringify(arr));
@@ -132,7 +122,7 @@ function getData() {
     }
 }
 getData();
-function istableLoad() {
+function isTableLoad() {
     debugger
     tableContainer.style.display = "none";
     if (arr.length > 0) {
@@ -144,57 +134,29 @@ function istableLoad() {
     }
 }
 
-
 let trash = document.querySelector(".fa-trash");
 function deleteRecord(index) {
     debugger
     console.log("delete function clicked!" + index);
     arr.splice(index, 1);
     setData();
-    istableLoad();
+    isTableLoad();
 }
 function edit(index) {
     console.log("edit function called!");
     debugger
-    document.querySelector(".form2").innerHTML = "";
-    let newForm = `<div class="input-field">
-    <label for="name">Enter correct name</label>
-    <input type="text" name="name" id="name" value = "${arr[index].name}" class="input"/>
-    <small class="errMsg"></small>
-  </div>
-
-  <div class="input-field">
-    <label for="surname">Enter correct Surname</label>
-    <input type="text" name="surname" id="surname" value = "${arr[index].surname}" class="input"/>
-    <small class="errMsg"></small>
-  </div>
-
-  <div class="input-field">
-    <label for="Email address">Enter correct  Email address</label>
-    <input type="email" name="email" id="mail" value = "${arr[index].email}" class="input"/>
-    <small class="errMsg"></small>
-  </div>
-
-  <div class="add-friend-btn input-field">
-    <input type = "submit" value="update" class="btn" id="updateBtn" onclick= "update(${index})"/>
-  </div>`;
-    document.querySelector(".form2").innerHTML = newForm;
+    inputField[0].value = `${arr[index].name}`;
+    inputField[1].value = `${arr[index].surname}`;
+    inputField[2].value = `${arr[index].email}`;
+    updateBtnToggle.innerHTML = ` <input type = "submit" value="update" class="btn" id="updateBtn" onclick= "update(${index})"/>`
 }
 
 function update(index) {
-
-
-
     debugger
     console.log("edit called");
-    // document.querySelector(".form2").removeAttribute("onsubmit");
-    debugger
     var editName = document.getElementById("name").value;
     var editSurname = document.getElementById("surname").value;
     var editEmail = document.getElementById("mail").value;
-
-
-
     if (validate()) {
         arr[index] = {
             name: editName,
@@ -202,13 +164,13 @@ function update(index) {
             email: editEmail
         }
         setData();
-        istableLoad();
-        editName = "";
-        editSurname = "";
-        editEmail = "";
+        isTableLoad();
+        inputField[0].value = ``;
+        inputField[1].value = ``;
+        inputField[2].value = ``;
+        updateBtnToggle.innerHTML = `<button value="Add Friend" class="btn" id="addFriendBtn">Add Friend</button>`
     }
 }
-
 function updateDataToTable() {
     debugger
     let table = `<table>
@@ -220,7 +182,6 @@ function updateDataToTable() {
 <td>Actions</td>
 </tr>
 </thead>
-
 <tbody id="tBody">`;
     for (let i = 0; i < arr.length; i++) {
         table += `<tr>
@@ -231,7 +192,7 @@ function updateDataToTable() {
     </tr>`;
     }
     table += `</tbody>
-  </table>`;
+    </table>`;
     tableContainer.innerHTML = table;
     console.log(table);
 }
