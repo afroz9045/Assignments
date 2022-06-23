@@ -3,8 +3,8 @@ let hamburger = document.querySelector("#hamburger");
 let hamIcon = document.querySelector(".fa-bars");
 let nav = document.querySelector("#nav");
 let form = document.getElementById("form");
-let table = document.querySelector(".form1");
-let isTableVisible = false;
+let tableContainer = document.querySelector(".form1");
+
 hamburger.addEventListener("click", () => {
     nav.classList.toggle("visible");
     hamIcon.classList.toggle("fa-times");
@@ -14,9 +14,9 @@ hamburger.addEventListener("click", () => {
 let inputField = document.querySelectorAll(".input");
 let addFriendBtn = document.querySelector("#addFriendBtn");
 
-addFriendBtn.addEventListener("click", validate);
-// addFriendBtn.addEventListener("click", istableLoad);
+addFriendBtn.addEventListener("click", save);
 document.addEventListener("DOMContentLoaded", istableLoad);
+
 
 
 //validation
@@ -81,8 +81,6 @@ function validate() {
         valid = true;
     }
     if (valid) {
-        save();
-        istableLoad();
         return true;
     }
     else {
@@ -93,29 +91,33 @@ function validate() {
 // CRUD operation
 let arr = [];
 function save() {
-    debugger
-    var name = document.getElementById("name").value;
-    var surname = document.getElementById("surname").value;
-    var email = document.getElementById("mail").value;
+    if (validate()) {
 
-    var friendsObj = {
-        name: name,
-        surname: surname,
-        email: email
+
+        debugger
+        var name = document.getElementById("name").value;
+        var surname = document.getElementById("surname").value;
+        var email = document.getElementById("mail").value;
+
+        var friendsObj = {
+            name: name,
+            surname: surname,
+            email: email
+        }
+
+        arr.push(friendsObj);
+        setData();
+        istableLoad();
+
+        var name = document.getElementById("name").value = "";
+        var surname = document.getElementById("surname").value = "";
+        var email = document.getElementById("mail").value = "";
     }
-
-    arr.push(friendsObj);
-    setData();
-
-    var name = document.getElementById("name").value = "";
-    var surname = document.getElementById("surname").value = "";
-    var email = document.getElementById("mail").value = "";
-
 
 }
 function setData() {
-    let friendsDB = localStorage.setItem("friendsData", JSON.stringify(arr));
-    console.log("data set in local storage :" + friendsDB);
+    localStorage.setItem("friendsData", JSON.stringify(arr));
+    console.log("data set in local storage :" + arr);
 }
 function getData() {
     debugger
@@ -124,7 +126,6 @@ function getData() {
     console.log("local storage data :" + data);
     if (data) {
         arr = JSON.parse(data);
-        // console.log(arr);
     }
     else {
         setData();
@@ -133,11 +134,13 @@ function getData() {
 getData();
 function istableLoad() {
     debugger
-    if (localStorage.getItem("friendsData").length > 0) {
+    tableContainer.style.display = "none";
+    if (arr.length > 0) {
         updateDataToTable();
+        tableContainer.style.display = "block";
     }
     else {
-        table.style.display = "none";
+        tableContainer.style.display = "none";
     }
 }
 
@@ -148,21 +151,87 @@ function deleteRecord(index) {
     console.log("delete function clicked!" + index);
     arr.splice(index, 1);
     setData();
-    // save();
+    istableLoad();
 }
+function edit(index) {
+    console.log("edit function called!");
+    debugger
+    document.querySelector(".form2").innerHTML = "";
+    let newForm = `<div class="input-field">
+    <label for="name">Enter correct name</label>
+    <input type="text" name="name" id="name" value = "${arr[index].name}" class="input"/>
+    <small class="errMsg"></small>
+  </div>
+
+  <div class="input-field">
+    <label for="surname">Enter correct Surname</label>
+    <input type="text" name="surname" id="surname" value = "${arr[index].surname}" class="input"/>
+    <small class="errMsg"></small>
+  </div>
+
+  <div class="input-field">
+    <label for="Email address">Enter correct  Email address</label>
+    <input type="email" name="email" id="mail" value = "${arr[index].email}" class="input"/>
+    <small class="errMsg"></small>
+  </div>
+
+  <div class="add-friend-btn input-field">
+    <input type = "submit" value="update" class="btn" id="updateBtn" onclick= "update(${index})"/>
+  </div>`;
+    document.querySelector(".form2").innerHTML = newForm;
+}
+
+function update(index) {
+
+
+
+    debugger
+    console.log("edit called");
+    // document.querySelector(".form2").removeAttribute("onsubmit");
+    debugger
+    var editName = document.getElementById("name").value;
+    var editSurname = document.getElementById("surname").value;
+    var editEmail = document.getElementById("mail").value;
+
+
+
+    if (validate()) {
+        arr[index] = {
+            name: editName,
+            surname: editSurname,
+            email: editEmail
+        }
+        setData();
+        istableLoad();
+        editName = "";
+        editSurname = "";
+        editEmail = "";
+    }
+}
+
 function updateDataToTable() {
     debugger
-    table.style.display = "block";
-    let tBody = document.getElementById("tBody");
-    tBody.innerHTML = "";
+    let table = `<table>
+<thead>
+<tr>
+<td>Name</td>
+<td>Surname</td>
+<td>Email</td>
+<td>Actions</td>
+</tr>
+</thead>
+
+<tbody id="tBody">`;
     for (let i = 0; i < arr.length; i++) {
-        let tableData = `
-        <tr>
-                    <td>${arr[i].name}</td>
-                    <td>${arr[i].surname}</td>
-                    <td>${arr[i].email}</td>
-                    <td><i class="fa-solid fa-trash" onclick ="deleteRecord(${i})"></i><i class="fa-solid fa-pen-to-square"></i></td>
-        </tr>           `;
-        tBody.innerHTML += tableData;
+        table += `<tr>
+    <td>${arr[i].name}</td>
+    <td>${arr[i].surname}</td>
+    <td>${arr[i].email}</td>
+    <td><i class="fa-solid fa-trash" onclick ="deleteRecord(${i})"></i><i class="fa-solid fa-pen-to-square" onclick ="edit(${i})"></i></td>
+    </tr>`;
     }
+    table += `</tbody>
+  </table>`;
+    tableContainer.innerHTML = table;
+    console.log(table);
 }

@@ -405,45 +405,37 @@
         </p>
         <div class="form-wrap">
           <div class="form-section">
-          <form class="form2" autocomplete="off" id="form" onsubmit="return event.preventDefault();">
-            <div class="input-field">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" placeholder="name" class="input" onkeydown="validate();"/>
-              <small class="errMsg"></small>
-            </div>
+            <form class="form2" autocomplete="off" id="form" onsubmit="return event.preventDefault();">
+              <div class="input-field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="name" class="input" onkeydown="validate();" />
+                <small class="errMsg"></small>
+              </div>
 
-            <div class="input-field">
-              <label for="surname">Surname</label>
-              <input type="text" name="surname" id="surname" placeholder="Surname" class="input"/>
-              <small class="errMsg"></small>
-            </div>
+              <div class="input-field">
+                <label for="surname">Surname</label>
+                <input type="text" name="surname" id="surname" placeholder="Surname" class="input"
+                  onkeydown="validate();" />
+                <small class="errMsg"></small>
+              </div>
 
-            <div class="input-field">
-              <label for="Email address">Email address</label>
-              <input type="email" name="email" id="mail" placeholder="Email" class="input"/>
-              <small class="errMsg"></small>
-            </div>
+              <div class="input-field">
+                <label for="Email address">Email address</label>
+                <input type="email" name="email" id="mail" placeholder="Email" class="input" onkeydown="validate();" />
+                <small class="errMsg"></small>
+              </div>
 
-            <div class="add-friend-btn input-field">
-              <button value="Add Friend" class="btn" id="addFriendBtn">Add Friend</button>
-            </div>
+              <div class="add-friend-btn input-field">
+                <button value="Add Friend" class="btn" id="addFriendBtn">Add Friend</button>
+              </div>
           </div>
 
-            <div class="form1 table-section">
-              <table id="table">
-                <thead>
-                  <tr>
-                    <td>Name</td>
-                    <td>Surname</td>
-                    <td>Email</td>
-                    <td>Actions</td>
-                  </tr>
-                </thead>
-                <tbody id="tBody">
+          <div class="form1 table-section">
+            <table id="table">
 
-                </tbody>
-              </table>
-            </div>
+
+            </table>
+          </div>
         </div>
         <button class="send-btn btn" type="submit" id="form-submit-btn">
           Send <i class="fa-solid fa-arrow-right-long"></i>
