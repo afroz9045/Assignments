@@ -24,23 +24,23 @@ function validate() {
     let errorMsg = document.querySelectorAll(".errMsg");
     let valid = false;
     if (name.value == "") {
-        errorMsg[0].textContent = "Name can't be empty";
+        errorMsg[0].textContent = "*Name can't be empty";
         return valid;
     }
     else if(name.value.match(/ /g)){
-        errorMsg[0].textContent = "White spaces are not allowed";
+        errorMsg[0].textContent = "*White spaces are not allowed";
         return valid;
     }
     else if (name.value.length < 3) {
-        errorMsg[0].textContent = "Name length should be minimum 3";
+        errorMsg[0].textContent = "*Name length should be minimum 3";
         return valid;
     }
     else if(name.value.match(/[0-9]/g)){
-        errorMsg[0].textContent = "Numbers are not allowed";
+        errorMsg[0].textContent = "*Numbers are not allowed";
         return valid;
     }
     else if(name.value.match(/[!@#$%^&*]/g)){
-        errorMsg[0].textContent = "Special characters are not allowed";
+        errorMsg[0].textContent = "*Special characters are not allowed";
         return valid;
     }
     
@@ -49,24 +49,24 @@ function validate() {
     }
 
     if (surname.value == "") {
-        errorMsg[1].textContent = "Surname can't be empty";
+        errorMsg[1].textContent = "*Surname can't be empty";
         return valid;
     }
     else if(surname.value.match(/ /g)){
-        errorMsg[1].textContent = "White spaces are not allowed";
+        errorMsg[1].textContent = "*White spaces are not allowed";
         return valid;
     }
     else if(surname.value.match(/[0-9]/g)){
-        errorMsg[1].textContent = "Numbers are not allowed";
+        errorMsg[1].textContent = "*Numbers are not allowed";
         return valid;
     }
     else if(surname.value.match(/[!@#$%^&*]/g)){
-        errorMsg[1].textContent = "Special characters are not allowed";
+        errorMsg[1].textContent = "*Special characters are not allowed";
         return valid;
     }
    
     else if (surname.value.length < 3) {
-        errorMsg[1].textContent = "Surname length should be minimum 3";
+        errorMsg[1].textContent = "*Surname length should be minimum 3";
         return valid;
     }
     else {
@@ -75,19 +75,19 @@ function validate() {
 
    
     if (mail.value === "") {
-        errorMsg[2].textContent = "Email can't be empty";
+        errorMsg[2].textContent = "*Email can't be empty";
         return valid;
     }
     else if( (!mail.value.endsWith(mail.value.match(/gmail.com/i))) && !(mail.value.endsWith(mail.value.match (/qualminds.com/i))) ){
-        alert("allow only gmail and qualminds emails");
+        errorMsg[2].textContent = "*Enter valid email";
         return valid;  
         }
     else if (mail.value.startsWith("@")) {
-        errorMsg[2].textContent = "Email Can't starts with @";
+        errorMsg[2].textContent = "*Email Can't starts with @";
         return valid;
     }
     else if (!(isNaN(mail.value))) {
-        errorMsg[2].textContent = "Email can't accept numbers";
+        errorMsg[2].textContent = "*Email can't accept numbers";
         return valid;
     }
     else {
