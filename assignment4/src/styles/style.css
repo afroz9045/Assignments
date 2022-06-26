@@ -146,9 +146,13 @@ button {
 .section2 {
   width: 90%;
   padding: 20px 10px;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
   margin: auto;
+}
+
+.section2 select {
+  padding: 10px 20px;
+  outline: 0.5px solid;
+  border-radius: 3px;
 }
 
 .our-recipe {

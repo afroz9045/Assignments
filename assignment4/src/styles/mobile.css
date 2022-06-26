@@ -88,14 +88,14 @@
     }
 
     .filter {
+        flex: 1;
         display: block;
-        flex-basis: 35%;
+        padding: auto 10px 10px 10px;
     }
 
     .custom-drop-down {
-        display: flex;
         flex-basis: 40%;
-        padding: 0 10px;
+        padding: 0 5px;
     }
 
     .search {
@@ -167,7 +167,7 @@
     }
 
     .card-heading h3 {
-        font-size: 1.7em;
+        font-size: 1.5em;
     }
 
     .form-wrapper p {
@@ -219,6 +219,7 @@
     }
 
     .input-field {
+        height: auto;
         padding-right: 0;
     }
 
