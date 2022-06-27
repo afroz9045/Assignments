@@ -22,6 +22,7 @@ function validate() {
     let surname = document.querySelector("#surname");
     let mail = document.querySelector("#mail");
     let errorMsg = document.querySelectorAll(".errMsg");
+   
     let valid = false;
     if (name.value == "") {
         errorMsg[0].textContent = "*Name can't be empty";
@@ -108,10 +109,22 @@ let arr = [];
 function save() {
     if (validate()) {
         debugger
+        
         var name = document.getElementById("name").value;
         var surname = document.getElementById("surname").value;
         var email = document.getElementById("mail").value;
         email = email.toLowerCase();
+        for(i=0;i<arr.length;i++){
+
+            if(arr[i].email==email){
+            
+            alert("email already exist");
+            
+            return;
+            
+            }
+            
+            }
         var friendsObj = {
             name: name,
             surname: surname,
