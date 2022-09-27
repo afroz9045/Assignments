@@ -1,0 +1,25 @@
+.sidebar{
+    background-color: #263643;
+    color: #fff;
+    height: 90vh;
+}
+.sidebar-items ul{
+    padding-left: 0;
+}
+.sidebar-actions{
+    display: flex;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+}
+.sidebar-actions span{
+    display: block;
+}
+.sidebar-actions li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sidebar-items ul li{
+    padding: 10px;
+    list-style-type: none;
+}
