@@ -1,25 +1,57 @@
-.sidebar{
+.sidebar {
+  background-color: #263643;
+  color: #fff;
+  height: 90vh;
+}
+.sidebar-items ul {
+  padding-left: 0;
+}
+.sidebar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar-actions span {
+  display: block;
+}
+
+.sidebar-actions li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sidebar-items ul li {
+  padding: 10px;
+  list-style-type: none;
+}
+.sidebar-items ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+.sidebar-dropdown{
     background-color: #263643;
     color: #fff;
-    height: 90vh;
 }
-.sidebar-items ul{
-    padding-left: 0;
-}
-.sidebar-actions{
-    display: flex;
-    justify-content: space-between;
-    /* border: 2px solid red; */
-}
-.sidebar-actions span{
-    display: block;
-}
-.sidebar-actions li{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.sidebar-items ul li{
+.accordion-body li {
     padding: 10px;
-    list-style-type: none;
+  list-style-type: none;
+  color: #fff;
 }
+.accordion-body li a {
+  text-decoration: none;
+  color: #fff;
+}
+.itemAccordin{
+    border: none;
+    border-bottom: 1px solid white;
+}
+.accordion-item button:focus{
+    border: none;
+}
+.accordion-button:after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+  }
+  .accordion-button i{
+    padding: 10px;
+  }
