@@ -1,0 +1,13 @@
+@media screen and (min-width:768px){
+    header{
+        width: 99%;
+        padding: 2% 10%;
+        margin: 0.5% auto;
+        
+    }
+    main{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
