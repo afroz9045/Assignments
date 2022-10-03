@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { IBooks } from 'src/app/Models/IBooks';
+import { BooksService } from 'src/app/Services/books.service';
 
 @Component({
   selector: 'app-available-books',
@@ -6,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./available-books.component.css']
 })
 export class AvailableBooksComponent implements OnInit {
+  bookList: IBooks[] = [];
+  busy: boolean | undefined;
+  errorMessage: string | undefined;
+  // http: any;
 
-  constructor() { }
+  constructor(private booksService: BooksService, private http: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getBooks()
+  }
+
+  getBooks() {
+    this.booksService.getAllBooks().subscribe((response) => {
+      const books = JSON.stringify(response);
+
+      this.bookList = JSON.parse(books)
+      console.log(this.bookList)
+      this.busy = false;
+    }, (response) => {
+
+      console.log(response)
+      this.errorMessage = "Request failed.";
+    });
+
   }
 
 }
+

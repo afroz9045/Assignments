@@ -1,0 +1,8 @@
+/* .staffNameDesignationId{
+    display:  flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} */
+.form-group{
+    padding: 10px 0;
+}

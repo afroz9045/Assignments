@@ -5,3 +5,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+.form-group label{
+    padding: 10px 0;
+}
+form button.btn:hover{
+    background-color: #2b2d2e!important;
+}
+form button.btn{
+    background-color: #161e23;
+    border: none;
+    margin: 0 auto;
+}
+
