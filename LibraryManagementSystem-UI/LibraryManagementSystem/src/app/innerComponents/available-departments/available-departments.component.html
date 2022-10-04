@@ -1,6 +1,6 @@
 <table class="table container">
     <thead>
-      <tr>
+      <tr class="text-center">
         <th scope="col">Department Id</th>
         <th scope="col">Department Name</th>
         <th scope="col">Actions</th>
@@ -8,8 +8,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let department of departmentList">
-        <td scope="row">{{department.departmentId}}</td>
+      <tr *ngFor="let department of departmentList" class="text-center">
+        <td scope="row">{{department.deptId}}</td>
         <td>{{department.departmentName}}</td>
         <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
       </tr>

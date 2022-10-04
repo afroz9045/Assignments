@@ -1,6 +1,6 @@
 <table class="table container">
     <thead>
-      <tr>
+      <tr class="text-center">
         <th scope="col">Book Id</th>
         <th scope="col">Book Name</th>
         <th scope="col">Isbn</th>
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of bookList">
+      <tr *ngFor="let book of bookList" class="text-center">
         <th scope="row">{{book.bookId}}</th>
         <td>{{book.bookName}}</td>
         <td>{{book.isbn}}</td>

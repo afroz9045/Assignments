@@ -10,12 +10,10 @@ import { DepartmentService } from 'src/app/Services/department.service';
 })
 export class AvailableDepartmentsComponent implements OnInit {
   departmentList: IDepartments[] = [];
-  busy: boolean | undefined;
   errorMessage: string | undefined;
   constructor(private departmentService:DepartmentService,private http:HttpClient) { }
 
   ngOnInit() {
-    debugger;
     this.getDepartments()
   }  
   getDepartments() {
@@ -24,7 +22,6 @@ export class AvailableDepartmentsComponent implements OnInit {
 
       this.departmentList = JSON.parse(departments)
       console.log(this.departmentList)
-      this.busy = false;
     }, (response) => {
 
       console.log(response)

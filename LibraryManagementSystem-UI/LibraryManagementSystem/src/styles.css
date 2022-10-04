@@ -16,4 +16,8 @@ form button.btn{
     border: none;
     margin: 0 auto;
 }
+td i{
+    padding: 0 15px;
+    cursor: pointer;
+}
 

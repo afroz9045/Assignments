@@ -10,9 +10,7 @@ import { BooksService } from 'src/app/Services/books.service';
 })
 export class AvailableBooksComponent implements OnInit {
   bookList: IBooks[] = [];
-  busy: boolean | undefined;
   errorMessage: string | undefined;
-  // http: any;
 
   constructor(private booksService: BooksService, private http: HttpClient) { }
 
@@ -26,7 +24,6 @@ export class AvailableBooksComponent implements OnInit {
 
       this.bookList = JSON.parse(books)
       console.log(this.bookList)
-      this.busy = false;
     }, (response) => {
 
       console.log(response)
