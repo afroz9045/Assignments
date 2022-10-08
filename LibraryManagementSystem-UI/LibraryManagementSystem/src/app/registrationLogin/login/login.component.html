@@ -1,0 +1,24 @@
+<div class="background">
+    <div class="login-card">
+        <div class="welcomeNote py-3">
+            <h3 class="text-dark">Welcome to Library Management System</h3>
+            <div class="imgContainer py-4">
+                <img src="./../../assets/Images/book-logo.png" alt="Book-Logo" class="">
+            </div>
+        </div>
+        <div class="login-input">
+            <input type="email" name="email" placeholder="Email" required [(ngModel)]="email">
+        </div>
+        <div class="login-input">
+            <input type="password" name="email" placeholder="Password" required [(ngModel)]="password">
+        </div>
+        <div class="login-btn text-center container">
+            <button class="btn btn-success" (click)="onLogin()">
+                Login
+            </button>
+        </div>
+        <div class="link text-center">
+            <a routerLink="/register" class="px-5">New user? Click to Sign Up</a>
+        </div>
+    </div>
+</div>

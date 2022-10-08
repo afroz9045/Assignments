@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { IDepartments } from '../Models/IDepartments';
 
 
@@ -11,10 +12,11 @@ import { IDepartments } from '../Models/IDepartments';
 export class DepartmentService {
  departmentList:IDepartments[]=[];
   constructor(private http:HttpClient){}
-  baseUrl = 'https://localhost:7257/v1/Departments/';
+  baseUrl = environment.baseUrl;
+  getDepartmentsSubUrl = environment.getDepartmentsSubUrl;
 getAllDepartments():Observable<IDepartments[]> {
     // debugger;
     this.departmentList = [];    
-  return this.http.get<IDepartments[]>(this.baseUrl)
+  return this.http.get<IDepartments[]>(this.baseUrl+this.getDepartmentsSubUrl)
 }
 }

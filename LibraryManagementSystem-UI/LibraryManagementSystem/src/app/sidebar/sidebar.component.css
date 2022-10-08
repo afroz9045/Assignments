@@ -1,7 +1,8 @@
 .sidebar {
   background-color: #263643;
   color: #fff;
-  height: 90vh;
+  height: 100vh;
+  overflow-y: hidden;
 }
 .sidebar-items ul {
   padding-left: 0;
@@ -30,7 +31,7 @@
   color: #fff;
 }
 .sidebar-dropdown{
-    background-color: #263643;
+    background-color: #203743;
     color: #fff;
 }
 .accordion-body li {
@@ -44,7 +45,6 @@
 }
 .itemAccordin{
     border: none;
-    border-bottom: 1px solid white;
 }
 .accordion-item button:focus{
     border: none;

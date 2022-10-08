@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -22,10 +22,21 @@ import { AvailableStudentsComponent } from './innerComponents/available-students
 import { IssueBookComponent } from './innerComponents/issue-book/issue-book.component';
 import { ReturnBookComponent } from './innerComponents/return-book/return-book.component';
 import { PenaltyCheckComponent } from './innerComponents/penalty-check/penalty-check.component';
+import { LoginComponent } from './registrationLogin/login/login.component';
+import { RegistrationComponent } from './registrationLogin/registration/registration.component';
+import { HomeComponent } from './home/home.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
+import { AuthService } from './Services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes:Routes = [
  // {path:'',component:AppComponent}, //localhost:4200
+  {path:'',component:LoginComponent},
+  {path:'register',component:RegistrationComponent},
+  {path:'home',component:HomeComponent
+,children:[
   {path:'book/add',component:AddBookComponent},
   {path:'department/add',component:AddDepartmentComponent},
   {path:'designation/add',component:AddDesignationComponent},
@@ -40,7 +51,7 @@ const appRoutes:Routes = [
   {path:'book/issue',component:IssueBookComponent},
   {path:'book/return',component:ReturnBookComponent},
   {path:'book/penaltycheck',component:PenaltyCheckComponent},
-  
+]}
 ]
 @NgModule({
   declarations: [
@@ -63,12 +74,16 @@ const appRoutes:Routes = [
     AvailableStudentsComponent,
     IssueBookComponent,
     ReturnBookComponent,
-    PenaltyCheckComponent
+    PenaltyCheckComponent,
+    LoginComponent,
+    RegistrationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
