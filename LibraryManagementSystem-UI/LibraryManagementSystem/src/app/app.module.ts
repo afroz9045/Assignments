@@ -29,29 +29,33 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './Services/auth.service';
 import { FormsModule } from '@angular/forms';
+import jwtDecode from 'jwt-decode';
+import { JwtDecodeService } from './Services/jwt-decode.service';
 
 
-const appRoutes:Routes = [
- // {path:'',component:AppComponent}, //localhost:4200
-  {path:'',component:LoginComponent},
-  {path:'register',component:RegistrationComponent},
-  {path:'home',component:HomeComponent
-,children:[
-  {path:'book/add',component:AddBookComponent},
-  {path:'department/add',component:AddDepartmentComponent},
-  {path:'designation/add',component:AddDesignationComponent},
-  {path:'staff/add',component:AddStaffComponent},
-  {path:'student/add',component:AddStudentComponent},
-  {path:'books',component:AvailableBooksComponent},
-  {path:'books/outofstock',component:OutOfStockComponent},
-  {path:'departments',component:AvailableDepartmentsComponent},
-  {path:'staffs',component:AvailableStaffsComponent},
-  {path:'students',component:AvailableStudentsComponent},
-  {path:'designations',component:AvailableDesignationsComponent},
-  {path:'book/issue',component:IssueBookComponent},
-  {path:'book/return',component:ReturnBookComponent},
-  {path:'book/penaltycheck',component:PenaltyCheckComponent},
-]}
+const appRoutes: Routes = [
+  // {path:'',component:AppComponent}, //localhost:4200
+  { path: '', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
+  {
+    path: 'home', component: HomeComponent
+    , children: [
+      { path: 'book/add', component: AddBookComponent },
+      { path: 'department/add', component: AddDepartmentComponent },
+      { path: 'designation/add', component: AddDesignationComponent },
+      { path: 'staff/add', component: AddStaffComponent },
+      { path: 'student/add', component: AddStudentComponent },
+      { path: 'books', component: AvailableBooksComponent },
+      { path: 'books/outofstock', component: OutOfStockComponent },
+      { path: 'departments', component: AvailableDepartmentsComponent },
+      { path: 'staffs', component: AvailableStaffsComponent },
+      { path: 'students', component: AvailableStudentsComponent },
+      { path: 'designations', component: AvailableDesignationsComponent },
+      { path: 'book/issue', component: IssueBookComponent },
+      { path: 'book/return', component: ReturnBookComponent },
+      { path: 'book/penaltycheck', component: PenaltyCheckComponent },
+    ]
+  }
 ]
 @NgModule({
   declarations: [
@@ -77,7 +81,7 @@ const appRoutes:Routes = [
     PenaltyCheckComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
