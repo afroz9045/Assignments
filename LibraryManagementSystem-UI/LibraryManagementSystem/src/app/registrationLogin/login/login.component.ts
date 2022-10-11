@@ -3,6 +3,7 @@ import { IUser } from 'src/app/Models/IUser';
 import { AuthService } from 'src/app/Services/auth.service';
 import { JwtDecodeService } from 'src/app/Services/jwt-decode.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class LoginComponent implements OnInit {
   email:string = '';
   password:string = '';
-  constructor(private authService:AuthService,private jwtDecode:JwtDecodeService) { }
+  constructor(private authService:AuthService,private jwtDecode:JwtDecodeService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
       console.log(tokenInformation.Email);
       console.log(tokenInformation);
       localStorage.setItem('userToken',token)
+      this.router.navigate(['/home']);
     });
   }
 }

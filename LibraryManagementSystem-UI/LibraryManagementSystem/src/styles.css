@@ -21,4 +21,8 @@ td i{
     padding: 0 15px;
     cursor: pointer;
 }
+.anchor-active{
+    border-bottom: 1px solid #298476;
+    padding-bottom: 5px;
+}
 

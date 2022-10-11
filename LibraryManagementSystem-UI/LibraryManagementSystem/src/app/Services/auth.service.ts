@@ -19,4 +19,9 @@ export class AuthService {
   public login(user: IUser): Observable<string> {
     return this.http.post(environment.baseUrlAuth + environment.loginAuthSubUrl, user, { responseType: 'text' });
   }
-}
+  // public getToken(){
+  //   let data = localStorage.getItem('userToken')|| "";
+  //   return data;
+  // }
+    // return localStorage.getItem('userToken');
+  }

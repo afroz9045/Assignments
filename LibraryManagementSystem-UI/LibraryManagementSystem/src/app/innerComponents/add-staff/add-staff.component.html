@@ -1,4 +1,4 @@
-<div class="alert alert-success container" role="alert">
+<div class="alert alert-success container" role="alert" *ngIf="isHide">
     Staff added successfully
 </div>
 <div class="form-container container">
@@ -6,26 +6,45 @@
         <h3>Add Staff</h3>
         <div class="staffNameDesignationId col-6">
             <div class="form-group">
-                <label for="staffName">Staff Name</label>
-                <input type="text" class="form-control" id="staffName" placeholder="Staff name" required />
+                <input type="text" class="form-control" name="staffName" id="staffName" placeholder="Staff name"
+                    required [(ngModel)]="staffName" />
             </div>
             <div class="form-group">
-                <label for="designationId">Designation Id</label>
-                <input type="text" class="form-control" id="designationId" placeholder="Designation id" required />
+               <select name="designation" class="form-control" (change)="getDesignation($event)">
+                <option value="">Select Designation</option>
+                <option value="A100">Professor</option>
+                <option value="A101">Lecturer</option>
+                <option value="A102">Associate Lecturer</option>
+                <option value="A103">HOD</option>
+                <option value="A104">Principle</option>
+                <option value="A105">Director</option>
+                <option value="A106">Librarian</option>
+                <option value="A107">Accountant</option>
+                <option value="A108">Clerk</option>
+               </select>
             </div>
+            <div class="form-group">
+                <input type="email" name="staffEmail" placeholder="Email" class="form-control" [(ngModel)]="email">
+            </div>
+            <div class="form-group">
+                <input type="password" name="staffEmail" placeholder="Password" class="form-control"
+                    [(ngModel)]="password">
+            </div>
+
             <div class="form-group">
                 <div>
                     <label for="designationName">Gender</label>
                 </div>
-                <input type="radio" name="gender" id=""> Male
-                <input type="radio" name="gender" id=""> Female
-                <input type="radio" name="gender" id=""> Other
+                <input type="radio" name="gender" id="" value="male" #male (change)="getGender($event)"> Male
+                <input type="radio" name="gender" id="" value="female" #female (change)="getGender($event)"> Female
+                <input type="radio" name="gender" id="" value="other" #other (change)="getGender($event)"> Other
             </div>
-            <button type="submit" class="btn btn-primary col-3 container my-4">
+
+            <button type="submit" class="btn btn-primary col-3 container my-4" (click)="addStaff()">
                 Add Staff
             </button>
         </div>
-        
-        
+
+
     </form>
 </div>

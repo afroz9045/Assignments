@@ -9,6 +9,7 @@ export const environment = {
   loginAuthSubUrl :"auth/login",
   registerAuthSubUrl : "auth/register",
   getBooksSubUrl:"Books",
+  addStaffSubUrl:"Staff",
   getOutOfStockBooksSubUrl: "Books/outofstock",
   getDepartmentsSubUrl : "Departments"
   
