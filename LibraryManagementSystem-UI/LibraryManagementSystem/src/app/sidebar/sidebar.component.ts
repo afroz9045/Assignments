@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +7,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
-  constructor() { }
+  isAddStaff: boolean = false;
+  isAddBook :boolean = false;
+  isAddDepartment:boolean = false;
+  isAddDesignation:boolean = false;
+  isAddStudent:boolean = false;
+  isBooksOutOfStock:boolean = false;
+  staffName:string='';
+  staffRole:string = '';
+  
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    console.log("hello")
+    this.roleVerify()
   }
 
+  roleVerify(){
+    var loggedInStaff = this.userService.parsedRole;
+    console.log(loggedInStaff.FullName)
+    this.staffName = loggedInStaff.FullName;
+    this.staffRole = loggedInStaff.Role;
+    if (loggedInStaff.Role === 'Principle' || loggedInStaff.Role === 'Director') {
+      this.isAddStaff = true;
+      this.isAddDepartment =true;
+      this.isAddDesignation =true;
+      this.isBooksOutOfStock = true;
+      this.isAddStudent = true;
+    }
+    if(loggedInStaff.Role ==='Librarian'){
+      this.isAddBook = true;
+      this.isBooksOutOfStock = true;
+    }
+    if(loggedInStaff.Role ==='HOD'){
+      this.isAddStudent = true;
+    }
+  }
 }

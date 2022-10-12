@@ -10,19 +10,16 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class StaffService {
-  constructor(private http:HttpClient,private authService:AuthService) { }
- 
-  
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
-
-  addStaff(staff:IStaff):Observable<IStaffDto>{
+  addStaff(staff: IStaff): Observable<IStaffDto> {
     let token = localStorage.getItem("userToken");
     console.log(token);
-   let headers = new HttpHeaders({
+    let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
     debugger
-    return this.http.post<IStaffDto>(environment.baseUrl+environment.addStaffSubUrl,staff,{headers:headers});
+    return this.http.post<IStaffDto>(environment.baseUrl + environment.addStaffSubUrl, staff, { headers: headers });
   }
 }

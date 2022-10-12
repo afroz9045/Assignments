@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class IssueBookComponent implements OnInit {
 
   selectedValue:string = "";
+  bookID:any;
 
   staff:boolean=false;
   student:boolean = false;
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
     
@@ -35,6 +37,10 @@ export class IssueBookComponent implements OnInit {
       this.student = false;
       this.staff = false;
     }
+  }
+
+  issueBook(){
+
   }
 
 }

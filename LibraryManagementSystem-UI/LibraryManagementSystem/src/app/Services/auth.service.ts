@@ -16,6 +16,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  
   public login(user: IUser): Observable<string> {
     return this.http.post(environment.baseUrlAuth + environment.loginAuthSubUrl, user, { responseType: 'text' });
   }

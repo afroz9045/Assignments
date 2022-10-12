@@ -1,14 +1,34 @@
-<header>
-  <div class="icon p-3">
-    <img src="./../../assets/Images/book-logo.png" alt="Book-Logo" />
-    <div class="text-center logo-heading">LMS</div>
+<header class="row">
+  <div class="icon col-2">
+    <div class="logo px-4">
+      <a routerLink="/home"><img src="./../../assets/Images/book-logo.png" alt="Book-Logo" /></a>
+      <div class="text-left logo-heading">LMS</div>
+    </div>
   </div>
-  <div class="nav-menu">
+
+  <div class="nav-menu col-6">
     <ul>
-      <li><i class="fa-solid fa-arrow-right"></i><a routerLink="book/issue" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Issue Book</a></li>
-      <li><i class="fa-solid fa-arrow-right"></i><a routerLink="book/return" routerLinkActive="active">Return Book</a></li>
-      <li><i class="fa-solid fa-arrow-right"></i><a routerLink="book/penaltycheck" routerLinkActive="active">Check Penalty</a></li>
+      <ng-container *ngIf="isBookIssue">
+        <li><i class="fa-solid fa-arrow-right"></i><a routerLink="book/issue" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">Issue Book</a></li>
+      </ng-container>
+      <ng-container *ngIf="isBookReturn">
+        <li><i class="fa-solid fa-arrow-right"></i><a routerLink="book/return" routerLinkActive="active">Return Book</a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="isPenaltyCheck">
+        <li><i class="fa-solid fa-arrow-right"></i><a routerLink="book/penaltycheck" routerLinkActive="active">Check
+            Penalty</a></li>
+      </ng-container>
     </ul>
   </div>
-  <div class="logout mx-5"><i class="fa-solid fa-user"></i>Logout</div>
+ 
+  <div class="profileAndLogout d-flex col-4">
+    <div class="logout lg mx-2" (click)="logout()">Logout</div>
+    <div class="staffDetails text-center p-3">
+      <i class="fa-solid fa-user profile-icon p-1"></i>
+      <div class="staffName"><small>{{staffName}}</small></div>
+      <div class="staffRole">{{staffRole}}</div>
+    </div>
+  </div>
 </header>

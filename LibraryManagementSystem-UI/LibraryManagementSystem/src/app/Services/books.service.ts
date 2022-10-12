@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable } from "rxjs";
 import { IBooks } from "../Models/IBooks";
 import { environment } from "src/environments/environment";
@@ -14,12 +14,23 @@ export class BooksService {
   getBooksSubUrl = environment.getBooksSubUrl;
   getOutOfStockBooksSubUrl = environment.getOutOfStockBooksSubUrl;
   getAllBooks(): Observable<IBooks[]> {
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
     // debugger;
     this.bookList = [];
-    return this.http.get<IBooks[]>(this.baseUrl+this.getBooksSubUrl);
+    return this.http.get<IBooks[]>(this.baseUrl+this.getBooksSubUrl,{ headers: headers });
   }
   getOutOfStockBooks(): Observable<IBooks[]> {
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
     this.bookList = [];
-    return this.http.get<IBooks[]>(this.baseUrl + this.getOutOfStockBooksSubUrl)
+    return this.http.get<IBooks[]>(this.baseUrl + this.getOutOfStockBooksSubUrl,{ headers: headers })
   }
 }

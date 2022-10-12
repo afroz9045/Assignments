@@ -27,12 +27,13 @@ export class LoginComponent implements OnInit {
       console.log(token);
 
       var decodedToken = this.jwtDecode.tokenDecode(token);
-      const ab = JSON.stringify(decodedToken)
-      var tokenInformation = JSON.parse(ab);
+      const tokenDecoded = JSON.stringify(decodedToken)
+      var tokenInformation = JSON.parse(tokenDecoded);
       console.log(tokenInformation['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']);
       console.log(tokenInformation.Email);
       console.log(tokenInformation);
       localStorage.setItem('userToken',token)
+      localStorage.setItem('userTokenDecoded',tokenDecoded)
       this.router.navigate(['/home']);
     });
   }

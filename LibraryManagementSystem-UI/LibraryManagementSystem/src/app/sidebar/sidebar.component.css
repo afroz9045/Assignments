@@ -1,8 +1,6 @@
 .sidebar {
-  background-color: #263643;
+  background-color: #203743;
   color: #fff;
-  height: 100vh;
-  overflow-y: hidden;
 }
 .sidebar-items ul {
   padding-left: 0;
@@ -30,12 +28,18 @@
   text-decoration: none;
   color: #fff;
 }
-.sidebar-dropdown{
-    background-color: #203743;
-    color: #fff;
+.sidebar-dropdown {
+  background-color: #203743;
+  color: #fff;
+}
+.accordion{
+  height: 100vh;
+}
+.accordion-body {
+  padding: 0 30px;
 }
 .accordion-body li {
-    padding: 10px;
+  padding: 10px;
   list-style-type: none;
   color: #fff;
 }
@@ -43,15 +47,18 @@
   text-decoration: none;
   color: #fff;
 }
-.itemAccordin{
-    border: none;
+.itemAccordin {
+  border: none;
 }
-.accordion-item button:focus{
-    border: none;
+.accordion-item button:focus {
+  border: none;
 }
 .accordion-button:after {
-    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
-  }
-  .accordion-button i{
-    padding: 10px;
-  }
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+.accordion-button {
+  padding-bottom: 5px;
+}
+.accordion-button i {
+  padding: 10px;
+}

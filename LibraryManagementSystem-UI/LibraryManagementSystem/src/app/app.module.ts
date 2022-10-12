@@ -38,8 +38,9 @@ const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   {
-    path: 'home', component: HomeComponent
+      path: 'home', component: HomeComponent
     , children: [
+      {path:'',component:AvailableBooksComponent},
       { path: 'book/add', component: AddBookComponent },
       { path: 'department/add', component: AddDepartmentComponent },
       { path: 'designation/add', component: AddDesignationComponent },
@@ -81,7 +82,7 @@ const appRoutes: Routes = [
     PenaltyCheckComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
