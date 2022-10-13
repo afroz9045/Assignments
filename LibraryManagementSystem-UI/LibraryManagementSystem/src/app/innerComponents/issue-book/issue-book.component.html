@@ -1,10 +1,13 @@
 <div class="form-container container">
+    <div class="alert alert-success" role="alert" *ngIf="issueSuccessAlert">
+        Book Issued Successfully to 
+      </div>
     <form action="" class="row align-item-center p-4">
         <h3>Book Issue</h3>
         <div class="issueForm col-6">
             <div class="form-group">
                 <label for="bookId">Book Id</label>
-                <input type="text" class="form-control" id="bookId" placeholder="Book id" required />
+                <input type="text" class="form-control" id="bookId" name="bookId" placeholder="Book id" required [(ngModel)]="bookId" />
             </div>
             <div class="dropdown mt-4">
                 <select name="issueTo" (change)="onDropDownChange($event)" class="p-2 rounded">
@@ -17,13 +20,13 @@
             <ng-container *ngIf="student">
                 <div class="form-group">
                     <label for="studentId">Student Id</label>
-                    <input type="text" class="form-control" id="studentId" placeholder="Student id" />
+                    <input type="text" class="form-control" id="studentId" placeholder="Student id" name="studentId" [(ngModel)]="studentId"/>
                 </div>
             </ng-container>
             <ng-container *ngIf="staff">
                 <div class="form-group">
                     <label for="staffId">Staff Id</label>
-                    <input type="text" class="form-control" id="staffId" placeholder="Staff id" required />
+                    <input type="text" class="form-control" id="staffId" placeholder="Staff id" required name="staffId" [(ngModel)]="staffId"/>
                 </div>
             </ng-container>
             <button type="submit" class="btn btn-primary col-3 container my-4" (click)="issueBook()">

@@ -8,10 +8,12 @@ export const environment = {
   baseUrlAuth : "https://localhost:7260/",
   loginAuthSubUrl :"auth/login",
   registerAuthSubUrl : "auth/register",
-  getBooksSubUrl:"Books",
-  addStaffSubUrl:"Staff",
-  getOutOfStockBooksSubUrl: "Books/outofstock",
-  getDepartmentsSubUrl : "Departments"
+  getBooksSubUrl:"books",
+  issueBookSubUrl:"issuebook",
+  returnBookSubUrl:"returnbook",
+  addStaffSubUrl:"staffs",
+  getOutOfStockBooksSubUrl: "books/outofstock",
+  getDepartmentsSubUrl : "departments"
   
 };
 

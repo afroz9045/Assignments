@@ -7,7 +7,11 @@ export class UserService {
   isAddStaff: boolean = false;
   user: string = '';
   parsedRole: any;
+
+
   constructor() { }
+
+  
   userRoleVerify() {
     debugger;
     let role = localStorage.getItem("userTokenDecoded");

@@ -4,13 +4,33 @@
         <div class="issueForm col-6">
             <div class="form-group">
                 <label for="issueId">Issue Id</label>
-                <input type="text" class="form-control" id="issueId" placeholder="Issue id" required />
+                <input type="text" class="form-control" id="issueId" name="issueId" placeholder="Issue id" required
+                    [(ngModel)]="issueId" />
             </div>
-            <button type="submit" class="btn btn-primary col-3 container my-4">
+            <button type="submit" class="btn btn-primary col-3 container my-4" (click)="returnBook()"
+                data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Return Book
             </button>
         </div>
 
 
     </form>
+</div>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngIf="isCheckPenaltyModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Please Check with your Issued Books and Penalty!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

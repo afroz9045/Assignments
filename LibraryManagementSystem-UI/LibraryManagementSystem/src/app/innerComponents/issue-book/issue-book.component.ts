@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { IIssueVm } from 'src/app/Models/IIssueVm';
+import { IssueService } from 'src/app/Services/issue.service';
 
 @Component({
   selector: 'app-issue-book',
@@ -9,11 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class IssueBookComponent implements OnInit {
 
   selectedValue:string = "";
-  bookID:any;
-
+  bookId:any;
+  studentId:any;
+  staffId:any;
   staff:boolean=false;
   student:boolean = false;
-  constructor(private http:HttpClient) { }
+  issueSuccessAlert:boolean= false;
+  constructor(private http:HttpClient,private issueService:IssueService) { }
 
   ngOnInit(): void {
     
@@ -40,6 +44,23 @@ export class IssueBookComponent implements OnInit {
   }
 
   issueBook(){
+    debugger
+    let issueDetail:IIssueVm={
+      BookID : this.bookId,
+      StaffId:this.staffId,
+      StudentId:this.studentId
+   }
+   this.issueService.issueBook(issueDetail).subscribe((issueResponse)=>{
+    if(issueResponse!==null||issueResponse!==undefined){
+      setTimeout(() => {
+        this.issueSuccessAlert=true;
+      }, 10000);
+    }
+    console.log(issueResponse.IssueId)
+    console.log(issueResponse.BookID);
+    console.log(issueResponse.IssuedTo);
+   })
+
 
   }
 
