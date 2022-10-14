@@ -11,10 +11,12 @@ export const environment = {
   getBooksSubUrl:"books",
   issueBookSubUrl:"issuebook",
   returnBookSubUrl:"returnbook",
+  penaltyCheckSubUrl:"bookspenalty/",
   addStaffSubUrl:"staffs",
   getOutOfStockBooksSubUrl: "books/outofstock",
-  getDepartmentsSubUrl : "departments"
-  
+  getDepartmentsSubUrl : "departments",
+  getDesignationSubUrl:"designations",
+  getStaffSubUrl:"staffs"
 };
 
 /*

@@ -60,8 +60,5 @@ export class IssueBookComponent implements OnInit {
     console.log(issueResponse.BookID);
     console.log(issueResponse.IssuedTo);
    })
-
-
   }
-
 }

@@ -10,7 +10,8 @@ import { ReturnService } from 'src/app/Services/return.service';
 export class ReturnBookComponent implements OnInit {
   issueId: any;
   returnSuccessAlert: boolean = false;
-  isCheckPenaltyModal:boolean = false;
+  isCheckPenaltyModal: boolean = false;
+  errorMsg :string = '';
 
   constructor(private returnBookService: ReturnService) { }
 
@@ -19,26 +20,28 @@ export class ReturnBookComponent implements OnInit {
 
   returnBook() {
     debugger
+    
     let returnDetail: IReturnVm = {
       IssueId: this.issueId
     }
+    
     let response = this.returnBookService.returnBook(returnDetail).subscribe(
       (returnBookResponse) => {
-      if (returnBookResponse !== null || returnBookResponse !== undefined) {
-        setTimeout(() => {
-          this.returnSuccessAlert = true;
-        }, 10000);
-        console.log(returnBookResponse.ReturnId);
-        console.log(returnBookResponse.ReturnDate);
+        if (returnBookResponse !== null || returnBookResponse !== undefined) {
+          setTimeout(() => {
+            this.returnSuccessAlert = true;
+          }, 10000);
+          console.log(returnBookResponse.ReturnId);
+          console.log(returnBookResponse.ReturnDate);
+        }
+      },
+      err => {
+        console.log(err.error)
+        if (err.status ==400) {
+          this.isCheckPenaltyModal = true;
+          this.errorMsg = err.error
+        }
       }
-      // if(returnBookResponse){}
-    },
-    err=>{
-console.log(err.error)
-      if(err.error==="Please Check with your Issued Books and Penalty!"){
-        this.isCheckPenaltyModal=true;
-      }
-    }
     )
     console.log(response);
   }

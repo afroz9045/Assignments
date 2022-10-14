@@ -4,13 +4,44 @@
         <div class="issueForm col-6">
             <div class="form-group">
                 <label for="issueId">Issue Id</label>
-                <input type="text" class="form-control" id="issueId" placeholder="Issue id" required />
+                <input type="text" class="form-control" name="issueId" id="issueId" placeholder="Issue id" required
+                    [(ngModel)]="issueId" />
             </div>
-            <button type="submit" class="btn btn-primary col-5container my-4">
+            <button type="submit" class="btn btn-primary col-5container my-4" (click)="checkPenalty()"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Check Penalty
             </button>
         </div>
-
-
     </form>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        *ngIf="isPenaltyPayPrompt">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-white">
+                    <h1 class="modal-title fs-5 text-bold" id="exampleModalLabel">Penalty Check</h1>
+                    <i class="fa-solid fa-xmark text-white px-2" data-bs-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <div class="modal-body">
+                    <ng-container #penaltyFound *ngIf="isPenalty">
+                        <div class="row">
+                            <div class="col-6 side-heading">Penalty Id</div>
+                            <div class="col-6"> {{penaltyId}}</div>
+                            <div class="col-6 side-heading">Issue Id</div>
+                            <div class="col-6"> {{issueId}}</div>
+                            <div class="col-6 side-heading">Penalty Amount</div>
+                            <div class="col-6">{{penaltyAmount}} &#8377;</div>
+                        </div>
+                    </ng-container>
+                    <ng-container #penaltyNotFound *ngIf="!isPenalty">
+                        <p class="fs-3">Penalty Not found</p>
+                    </ng-container>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" *ngIf="isPenalty">Pay
+                        Penalty</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

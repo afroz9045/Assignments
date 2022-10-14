@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IStaffDto } from 'src/app/Models/IStaffDto';
+import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
   selector: 'app-available-staffs',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./available-staffs.component.css']
 })
 export class AvailableStaffsComponent implements OnInit {
+  staffList: IStaffDto[] = [];
+  errorMessage: string | undefined;
 
-  constructor() { }
+  constructor(private staffService:StaffService) { 
+    this.getStaffs()
+  }
 
   ngOnInit(): void {
   }
+  getStaffs() {
+    debugger
+    this.staffService.getStaff().subscribe((response) => {
+      const staffs = JSON.stringify(response);
 
+      this.staffList = JSON.parse(staffs)
+      console.log(this.staffList)
+    }, (response) => {
+
+      console.log(response)
+      this.errorMessage = "Request failed.";
+    });
+
+  }
 }

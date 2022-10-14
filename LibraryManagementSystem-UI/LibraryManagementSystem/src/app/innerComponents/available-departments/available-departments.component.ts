@@ -17,6 +17,7 @@ export class AvailableDepartmentsComponent implements OnInit {
     this.getDepartments()
   }  
   getDepartments() {
+    debugger
     this.departmentService.getAllDepartments().subscribe((response) => {
       const departments = JSON.stringify(response);
 

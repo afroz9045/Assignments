@@ -1,13 +1,21 @@
 .modal-header{
     background-color: #203743;
 }
+.form-container{
+    position: relative;
+}
 .modal-dialog {
     position: absolute;
-    top: 300px;
-    right: 200px;
+    top: 20%;
+    right:5%;
     bottom: 0;
     left: 0;
     z-index: 10040;
     overflow: auto;
     overflow-y: auto;
+  }
+  .fa-xmark{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
   }

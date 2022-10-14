@@ -1,0 +1,27 @@
+.modal-header{
+    background-color: #203743;
+}
+.side-heading{
+    font-weight: bold;
+}
+.form-container{
+    position: relative;
+}
+.modal-dialog {
+    position: absolute;
+    top: 20%;
+    right:5%;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+  }
+  .fa-xmark{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+  .modal-footer{
+    justify-content: center;
+  }

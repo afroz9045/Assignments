@@ -1,4 +1,4 @@
-<table class="table container">
+<table class="table container text-center">
     <thead>
       <tr>
         <th scope="col">Staff Id</th>
@@ -10,11 +10,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>S1005</td>
-        <td>Srinivas</td>
-        <td>Male</td>
-        <td>A1005</td>
+      <tr *ngFor="let staff of staffList">
+        <td>{{staff.staffId}}</td>
+        <td>{{staff.staffName}}</td>
+        <td>{{staff.gender}}</td>
+        <td>{{staff.designationId}}</td>
         <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
       </tr>
     </tbody>
