@@ -10,7 +10,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class StaffService {
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient) { }
 
   addStaff(staff: IStaff): Observable<IStaffDto> {
     let token = localStorage.getItem("userToken");

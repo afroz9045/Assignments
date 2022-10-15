@@ -16,7 +16,8 @@ export const environment = {
   getOutOfStockBooksSubUrl: "books/outofstock",
   getDepartmentsSubUrl : "departments",
   getDesignationSubUrl:"designations",
-  getStaffSubUrl:"staffs"
+  getStaffSubUrl:"staffs",
+  getStudentSubUrl:"students"
 };
 
 /*
