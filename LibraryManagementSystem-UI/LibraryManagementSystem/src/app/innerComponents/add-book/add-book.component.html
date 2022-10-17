@@ -1,48 +1,26 @@
-
-    <div class="alert alert-success container"role="alert">
-        Book added successfully
-      </div>
+<div class="alert alert-success container" role="alert" *ngIf="isAlertShow">
+  {{responseMessage}}
+</div>
 <div class="form-container container">
-    <form action="" class="row align-item-center p-4">
+  <form action="" class="row align-item-center p-4">
     <h3>Add Book Details</h3>
     <div class="form-group col-6">
       <label for="bookName">Book Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="bookName"
-        placeholder="Book name"
-        required
-      />
+      <input type="text" class="form-control" name="bookName" id="bookName" placeholder="Book name" required [(ngModel)]="bookName" />
     </div>
     <div class="form-group col-6">
       <label for="isbn">Isbn Number</label>
-      <input
-        type="text"
-        class="form-control"
-        id="isbn"
-        placeholder="Isbn number"
-      />
+      <input type="text" class="form-control" name="isbn" id="isbn" placeholder="Isbn number"required [(ngModel)]="isbn" />
     </div>
     <div class="form-group col-6">
       <label for="author">Author Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="author"
-        placeholder="Author name"
-      />
+      <input type="text" class="form-control" name="authorName" id="author" placeholder="Author name" required [(ngModel)]="authorName" />
     </div>
     <div class="form-group col-6">
       <label for="bookEdition">Book Edition</label>
-      <input
-        type="text"
-        class="form-control"
-        id="bookEdition"
-        placeholder="Book edition"
-      />
+      <input type="text" class="form-control" id="bookEdition" name="bookEdition" placeholder="Book edition" [(ngModel)]="bookEdition" />
     </div>
-    <button type="submit" class="btn btn-primary col-6 container my-4">
+    <button type="submit" class="btn btn-primary col-6 container my-4" (click)="addBook()">
       Add Book
     </button>
   </form>

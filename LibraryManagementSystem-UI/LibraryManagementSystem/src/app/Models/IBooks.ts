@@ -4,5 +4,6 @@ export interface IBooks{
     isbn:number,
     authorName:string,
     bookEdition:string,
-    stockAvailable:number
+    stockAvailable:number,
+    stockUpdate:boolean
 }
