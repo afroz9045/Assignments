@@ -11,10 +11,12 @@ import { DepartmentService } from 'src/app/Services/department.service';
 export class AvailableDepartmentsComponent implements OnInit {
   departmentList: IDepartments[] = [];
   errorMessage: string | undefined;
-  constructor(private departmentService:DepartmentService,private http:HttpClient) { }
+  constructor(private departmentService:DepartmentService,private http:HttpClient) { 
+    this.getDepartments()
+  }
 
   ngOnInit() {
-    this.getDepartments()
+    
   }  
   getDepartments() {
     debugger

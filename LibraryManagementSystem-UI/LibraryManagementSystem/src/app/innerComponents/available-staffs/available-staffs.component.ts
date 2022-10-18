@@ -31,4 +31,12 @@ export class AvailableStaffsComponent implements OnInit {
     });
 
   }
+  editStaff(id:string)
+  {
+console.log(id)
+  }
+  deleteStaff(id:string)
+  {
+console.log(id)
+  }
 }

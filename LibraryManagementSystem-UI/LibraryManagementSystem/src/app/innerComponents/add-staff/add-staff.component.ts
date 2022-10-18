@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IStaff } from 'src/app/Models/IStaff';
 import { IStaffDto } from 'src/app/Models/IStaffDto';
+import { DesignationService } from 'src/app/Services/designation.service';
+import { IDesignations } from 'src/app/Models/IDesignations';
 import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
@@ -11,7 +13,11 @@ import { StaffService } from 'src/app/Services/staff.service';
 export class AddStaffComponent implements OnInit {
 
   isHide:Boolean =false;
-  constructor(private staffService:StaffService) { }
+  constructor(private staffService:StaffService,private designationService:DesignationService) { 
+    this.callGetDesignation()
+  }
+
+  designationList: IDesignations[] = [];
   staffName = "";
   designationId = "";
   email: string = "";
@@ -29,6 +35,13 @@ export class AddStaffComponent implements OnInit {
     console.log(`Selected designation is ${this.designationId}`);
   }
   
+  callGetDesignation(){
+    this.designationService.getAllDesignations().subscribe((res)=>{
+      var stringifyDesignation = JSON.stringify(res)
+      this.designationList = JSON.parse(stringifyDesignation)
+      console.log(this.designationList)
+    });
+  }
 
   addStaff() {
     debugger

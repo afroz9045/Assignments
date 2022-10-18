@@ -38,7 +38,8 @@
                     </ng-container>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" *ngIf="isPenalty">Pay
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" *ngIf="isPenalty"
+                        (click)="onPayPenalty()">Pay
                         Penalty</button>
                 </div>
             </div>

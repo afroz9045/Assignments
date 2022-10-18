@@ -11,10 +11,12 @@ import { BooksService } from 'src/app/Services/books.service';
 export class OutOfStockComponent implements OnInit {
   bookList: IBooks[] = [];
   errorMessage: string | undefined;
-  constructor(private booksService: BooksService, private http: HttpClient) { }
+  constructor(private booksService: BooksService, private http: HttpClient) {
+    this.getOutOfStockBooks()
+   }
 
   ngOnInit() {
-    this.getOutOfStockBooks()
+    
   }
 
   getOutOfStockBooks() {

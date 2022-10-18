@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DesignationService } from 'src/app/Services/designation.service';
 
 @Component({
   selector: 'app-add-designation',

@@ -13,6 +13,7 @@ export class DesignationService {
   designationList: IDesignations[] = [];
 
 
+
   baseUrl = environment.baseUrl;
   getDesignationSubUrl = environment.getDesignationSubUrl;
 

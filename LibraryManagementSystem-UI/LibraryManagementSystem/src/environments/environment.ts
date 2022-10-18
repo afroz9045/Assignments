@@ -12,6 +12,7 @@ export const environment = {
   issueBookSubUrl:"issuebook",
   returnBookSubUrl:"returnbook",
   penaltyCheckSubUrl:"bookspenalty/",
+  payPenaltySubUrl:"bookspenalty/pay",
   addStaffSubUrl:"staffs",
   addBookSubUrl:"books",
   getOutOfStockBooksSubUrl: "books/outofstock",

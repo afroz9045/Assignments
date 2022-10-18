@@ -10,18 +10,10 @@
                     required [(ngModel)]="staffName" />
             </div>
             <div class="form-group">
-               <select name="designation" class="form-control" (change)="getDesignation($event)">
-                <option value="">Select Designation</option>
-                <option value="A100">Professor</option>
-                <option value="A101">Lecturer</option>
-                <option value="A102">Associate Lecturer</option>
-                <option value="A103">HOD</option>
-                <option value="A104">Principle</option>
-                <option value="A105">Director</option>
-                <option value="A106">Librarian</option>
-                <option value="A107">Accountant</option>
-                <option value="A108">Clerk</option>
-               </select>
+                <select name="designation" class="form-control" (change)="getDesignation($event)">
+                    <option value="">Select Designation</option>
+                    <option value="{{designation.designationId}}" *ngFor="let designation of designationList">{{designation.designationName}}</option>
+                </select>
             </div>
             <div class="form-group">
                 <input type="email" name="staffEmail" placeholder="Email" class="form-control" [(ngModel)]="email">

@@ -12,10 +12,12 @@ export class AvailableBooksComponent implements OnInit {
   bookList: IBooks[] = [];
   errorMessage: string | undefined;
 
-  constructor(private booksService: BooksService, private http: HttpClient) { }
+  constructor(private booksService: BooksService, private http: HttpClient) { 
+    this.getBooks()
+  }
 
   ngOnInit() {
-    this.getBooks()
+    
   }
 
   getBooks() {
