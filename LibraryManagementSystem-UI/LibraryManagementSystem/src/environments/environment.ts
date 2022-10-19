@@ -19,7 +19,10 @@ export const environment = {
   getDepartmentsSubUrl : "departments",
   getDesignationSubUrl:"designations",
   getStaffSubUrl:"staffs",
-  getStudentSubUrl:"students"
+  getStudentSubUrl:"students",
+  getBooksIssueSubUrl:"issuebook",
+  getBooksReturnedSubUrl: "returnbook",
+  getPendingBooksReturn :"returnbook/pending-returns"
 };
 
 /*

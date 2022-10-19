@@ -1,9 +1,9 @@
 export interface IReturnDto{
-    ReturnId:number,
-    IssueDate:Date,
-    ExpiryDate:Date,
-    ReturnDate:Date,
-    BookId:number,
-    IssueId:number
+    returnId:number,
+    issueDate:Date,
+    expiryDate:Date,
+    returnDate:Date,
+    bookId:number,
+    issueId:number
 }
 

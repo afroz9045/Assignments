@@ -30,9 +30,10 @@ export class ReturnBookComponent implements OnInit {
         if (returnBookResponse !== null || returnBookResponse !== undefined) {
           setTimeout(() => {
             this.returnSuccessAlert = true;
+            this.errorMsg = "Book return successfully!"
           }, 10000);
-          console.log(returnBookResponse.ReturnId);
-          console.log(returnBookResponse.ReturnDate);
+          console.log(returnBookResponse.returnId);
+          console.log(returnBookResponse.returnDate);
         }
       },
       err => {

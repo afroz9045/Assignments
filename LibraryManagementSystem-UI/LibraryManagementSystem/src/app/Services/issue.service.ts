@@ -23,4 +23,15 @@ export class IssueService {
     });
     return this.http.post<IIssueDto>(environment.baseUrl+environment.issueBookSubUrl,issueDetails,{headers:headers})
   }
+
+
+  getBooksIssue(){
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<IIssueDto>(environment.baseUrl+environment.getBooksIssueSubUrl,{headers:headers})
+  }
 }

@@ -56,9 +56,9 @@ export class IssueBookComponent implements OnInit {
         this.issueSuccessAlert=true;
       }, 10000);
     }
-    console.log(issueResponse.IssueId)
-    console.log(issueResponse.BookID);
-    console.log(issueResponse.IssuedTo);
+    console.log(issueResponse.issueId)
+    console.log(issueResponse.bookId);
+    console.log(issueResponse.issuedTo);
    })
   }
 }

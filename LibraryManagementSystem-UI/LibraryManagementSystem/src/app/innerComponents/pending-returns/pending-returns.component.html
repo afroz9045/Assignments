@@ -1,0 +1,21 @@
+<div class="search p-3 col-4">
+    <input type="text" class="form-control p-1" placeholder="Search pending returns here...">
+</div>
+<table class="table container-fluid">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">Issue Id</th>
+            <th scope="col">Book Id</th>
+            <th scope="col">Id</th>
+            <th scope="col">IssuedTo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pendingReturn of pendingReturnList" class="text-center">
+            <td>{{pendingReturn.issueId}}</td>
+            <td>{{pendingReturn.bookId}}</td>
+            <td>{{pendingReturn.id}}</td>
+            <td>{{pendingReturn.issuedTo}}</td>
+        </tr>
+    </tbody>
+</table>

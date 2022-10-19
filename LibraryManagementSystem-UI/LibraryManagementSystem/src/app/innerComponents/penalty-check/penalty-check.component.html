@@ -1,5 +1,9 @@
 <div class="form-container container">
+   
     <form action="" class="row align-item-center p-4">
+        <div class="alert alert-info my-2 col-6" role="alert" *ngIf="isNoPenaltyAlert">
+            {{errorMsg}}
+          </div>
         <h3>Penalty Check</h3>
         <div class="issueForm col-6">
             <div class="form-group">
@@ -45,4 +49,5 @@
             </div>
         </div>
     </div>
+    
 </div>

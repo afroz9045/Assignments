@@ -1,7 +1,8 @@
 <div class="search p-3 col-4">
   <input type="text" class="form-control p-1" placeholder="Search book here...">
 </div>
-<table class="table container">
+<div>
+  <table class="table container-fluid">
     <thead>
       <tr class="text-center">
         <th scope="col">Book Id</th>
@@ -13,8 +14,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let book of bookList" class="text-center">
-        <th scope="row">{{book.bookId}}</th>
+      <tr *ngFor="let book of bookList"
+        class="text-center">
+        <td>{{book.bookId}}</td>
         <td>{{book.bookName}}</td>
         <td>{{book.isbn}}</td>
         <td>{{book.authorName}}</td>
@@ -22,4 +24,6 @@
         <td>{{book.stockAvailable}}</td>
       </tr>
     </tbody>
+
   </table>
+</div>

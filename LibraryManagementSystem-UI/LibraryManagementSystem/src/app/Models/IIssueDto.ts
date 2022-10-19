@@ -1,8 +1,8 @@
 export interface IIssueDto{
-    IssueId:number,
-    BookID:number,
-    IssueDate:Date,
-    ExpiryDate:Date,
-    Id:string,
-    IssuedTo:string
+    issueId:number,
+    bookId:number,
+    issueDate:Date,
+    expiryDate:Date,
+    id:string,
+    issuedTo:string
 }

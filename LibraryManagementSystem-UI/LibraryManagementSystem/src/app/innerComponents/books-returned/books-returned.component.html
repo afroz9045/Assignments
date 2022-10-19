@@ -1,1 +1,25 @@
-<p>books-returned works!</p>
+<div class="search p-3 col-4">
+    <input type="text" class="form-control p-1" placeholder="Search book here...">
+  </div>
+  <table class="table container-fluid">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Return Id</th>
+          <th scope="col">Expiry Date</th>
+          <th scope="col">Issue Date</th>
+          <th scope="col">Return Date</th>
+          <th scope="col">Issue Id</th>
+          <th scope="col">Book Id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booksReturned of booksReturnedList" class="text-center">
+          <td>{{booksReturned.returnId}}</td>
+          <td>{{booksReturned.expiryDate|date}}</td>
+          <td>{{booksReturned.issueDate | date}}</td>
+          <td>{{booksReturned.returnDate | date}}</td>
+          <td>{{booksReturned.issueId}}</td>
+          <td>{{booksReturned.bookId}}</td>
+        </tr>
+      </tbody>
+    </table>

@@ -9,14 +9,17 @@ import { BooksService } from 'src/app/Services/books.service';
   styleUrls: ['./out-of-stock.component.css']
 })
 export class OutOfStockComponent implements OnInit {
+  totalLength:number;
+  page:number=1;
   bookList: IBooks[] = [];
   errorMessage: string | undefined;
   constructor(private booksService: BooksService, private http: HttpClient) {
     this.getOutOfStockBooks()
+    this.totalLength = this.bookList.length;
    }
 
   ngOnInit() {
-    
+   
   }
 
   getOutOfStockBooks() {

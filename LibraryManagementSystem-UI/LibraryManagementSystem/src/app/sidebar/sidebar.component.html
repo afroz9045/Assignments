@@ -88,5 +88,23 @@
       </div>
     </div>
     <!--  -->
+
+    <!--  -->
+    <div class="accordion-item itemAccordin">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed sidebar-dropdown" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>Issue/Return
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body sidebar-dropdown">
+          <li><a routerLink="issued" routerLinkActive="anchor-active">Books Issued</a></li>
+          <li><a routerLink="returned" routerLinkActive="anchor-active">Books Return</a></li>
+          <li><a routerLink="to-be-return" routerLinkActive="anchor-active">Pending Returns</a></li>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

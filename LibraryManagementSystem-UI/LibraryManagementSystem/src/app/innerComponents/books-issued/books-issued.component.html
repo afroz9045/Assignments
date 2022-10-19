@@ -1,0 +1,25 @@
+<div class="search p-3 col-4">
+    <input type="text" class="form-control p-1" placeholder="Search book here...">
+  </div>
+  <table class="table container-fluid">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Issue Id</th>
+          <th scope="col">Book Id</th>
+          <th scope="col">Issue Date</th>
+          <th scope="col">Expiry Date</th>
+          <th scope="col">Id</th>
+          <th scope="col">IssuedTo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booksIssued of booksIssuedList" class="text-center">
+          <td>{{booksIssued.issueId}}</td>
+          <td>{{booksIssued.bookId}}</td>
+          <td>{{booksIssued.issueDate | date}}</td>
+          <td>{{booksIssued.expiryDate | date}}</td>
+          <td>{{booksIssued.id}}</td>
+          <td>{{booksIssued.issuedTo}}</td>
+        </tr>
+      </tbody>
+    </table>
