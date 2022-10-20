@@ -7,9 +7,8 @@ import jwt_decode from "jwt-decode";
 export class JwtDecodeService {
 
   constructor() { }
-  
 
-  tokenDecode(token:string){
+  tokenDecode(token: string) {
     return jwt_decode(token);
-  }
+  } 
 }

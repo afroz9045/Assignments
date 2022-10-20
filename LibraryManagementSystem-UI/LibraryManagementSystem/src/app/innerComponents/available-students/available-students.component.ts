@@ -33,4 +33,11 @@ export class AvailableStudentsComponent implements OnInit {
     });
 
   }
+
+  onEditStudent(studentId:number){
+    console.log(`Student id to edit : ${studentId}`)
+  }
+  onDeleteStudent(studentId:number){
+    console.log(`Student id to delete : ${studentId}`)
+  }
 }

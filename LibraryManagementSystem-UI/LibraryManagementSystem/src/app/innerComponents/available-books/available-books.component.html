@@ -1,28 +1,36 @@
+
 <div class="search p-3 col-4">
   <input type="text" class="form-control p-1" placeholder="Search book here...">
 </div>
 <table class="table container-fluid">
-    <thead>
-      <tr class="text-center">
-        <th scope="col">Book Id</th>
-        <th scope="col">Book Name</th>
-        <th scope="col">Isbn</th>
-        <th scope="col">Author Name</th>
-        <th scope="col">Book Edition</th>
-        <th scope="col">Stock Available</th>
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Book Id</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Isbn</th>
+      <th scope="col">Author Name</th>
+      <th scope="col">Book Edition</th>
+      <th scope="col">Stock Available</th>
+      <ng-container *ngIf="isUserCanAlter">
         <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let book of bookList" class="text-center">
-        <td>{{book.bookId}}</td>
-        <td>{{book.bookName}}</td>
-        <td>{{book.isbn}}</td>
-        <td>{{book.authorName}}</td>
-        <td>{{book.bookEdition}}</td>
-        <td>{{book.stockAvailable}}</td>
-        <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-      </tr>
-    </tbody>
-  </table>
-<mat-paginator #paginator [length]="100" [pageSizeOptions]="[3,5,10]" aria-label="select page"></mat-paginator>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of bookList" class="text-center">
+      <td>{{book.bookId}}</td>
+      <td>{{book.bookName}}</td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.authorName}}</td>
+      <td>{{book.bookEdition}}</td>
+      <td><input type="number" name="" id="" [value]="book.stockAvailable" class="stockInput w-25 text-center"
+          (change)="stockUpdate($event,book.bookId)" *ngIf="isUserCanAlter"><span *ngIf="!isUserCanAlter">{{book.stockAvailable}}</span></td>
+      <ng-container *ngIf="isUserCanAlter">
+        <td>
+          <i class="fa-solid fa-pen-to-square" (click)="onEditBook(book.bookId)"></i>
+          <i class="fa-solid fa-trash" (click)="onDeleteBook(book.bookId)"></i>
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

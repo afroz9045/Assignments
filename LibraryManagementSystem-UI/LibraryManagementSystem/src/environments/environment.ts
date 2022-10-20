@@ -22,7 +22,9 @@ export const environment = {
   getStudentSubUrl:"students",
   getBooksIssueSubUrl:"issuebook",
   getBooksReturnedSubUrl: "returnbook",
-  getPendingBooksReturn :"returnbook/pending-returns"
+  getPendingBooksReturn :"returnbook/pending-returns",
+  updateBook:"books/",
+  bookStockUpdate:"books/stockupdate"
 };
 
 /*

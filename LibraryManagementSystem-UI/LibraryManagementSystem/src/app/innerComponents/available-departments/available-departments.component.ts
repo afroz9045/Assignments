@@ -11,13 +11,13 @@ import { DepartmentService } from 'src/app/Services/department.service';
 export class AvailableDepartmentsComponent implements OnInit {
   departmentList: IDepartments[] = [];
   errorMessage: string | undefined;
-  constructor(private departmentService:DepartmentService,private http:HttpClient) { 
+  constructor(private departmentService: DepartmentService, private http: HttpClient) {
     this.getDepartments()
   }
 
   ngOnInit() {
-    
-  }  
+
+  }
   getDepartments() {
     debugger
     this.departmentService.getAllDepartments().subscribe((response) => {
@@ -31,4 +31,12 @@ export class AvailableDepartmentsComponent implements OnInit {
       this.errorMessage = "Request failed.";
     });
 
-}}
+  }
+  onDepartmentEdit(deptId:number){
+    console.log(`Department id for edit is : ${deptId}`)
+  }
+
+  onDepartmentDelete(deptId:number){
+    console.log(`department id for delete is : ${deptId}`)
+  }
+}

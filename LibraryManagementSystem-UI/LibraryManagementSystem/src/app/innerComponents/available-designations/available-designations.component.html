@@ -8,10 +8,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let department of designationList">
-        <td scope="row">{{department.designationId}}</td>
-        <td>{{department.designationName}}</td>
-        <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
+      <tr *ngFor="let designation of designationList">
+        <td scope="row">{{designation.designationId}}</td>
+        <td>{{designation.designationName}}</td>
+        <td>
+          <i class="fa-solid fa-pen-to-square" (click)="onEditDesignation(designation.designationId)"></i>
+          <i class="fa-solid fa-trash" (click)="onDeleteDesignation(designation.designationId)"></i>
+        </td>
       </tr>
     </tbody>
   </table>

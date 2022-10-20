@@ -28,8 +28,10 @@
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
         data-bs-parent="#accordionExample">
         <div class="accordion-body sidebar-dropdown">
-          <li><a routerLink="department/add" routerLinkActive="anchor-active" *ngIf="isAddDepartment">Add Department</a>
-          </li>
+          <ng-container *ngIf="isAddDepartment">
+            <li><a routerLink="department/add" routerLinkActive="anchor-active">Add Department</a>
+            </li>
+          </ng-container>
           <li><a routerLink="departments" routerLinkActive="anchor-active">Available Department</a></li>
         </div>
       </div>
@@ -45,8 +47,10 @@
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
         data-bs-parent="#accordionExample">
         <div class="accordion-body sidebar-dropdown">
-          <li><a routerLink="designation/add" routerLinkActive="anchor-active" *ngIf="isAddDesignation">Add
-              Designation</a></li>
+          <ng-container *ngIf="isAddDesignation">
+            <li><a routerLink="designation/add" routerLinkActive="anchor-active">Add
+                Designation</a></li>
+          </ng-container>
           <li><a routerLink="designations" routerLinkActive="anchor-active">Available Designation</a></li>
         </div>
       </div>

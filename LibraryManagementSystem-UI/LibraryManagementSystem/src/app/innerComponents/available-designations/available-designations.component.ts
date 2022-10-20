@@ -10,7 +10,7 @@ import { DesignationService } from 'src/app/Services/designation.service';
 export class AvailableDesignationsComponent implements OnInit {
   designationList: IDesignations[] = [];
   errorMessage: string | undefined;
-  constructor(private designationService: DesignationService) { 
+  constructor(private designationService: DesignationService) {
     this.getDesignations();
   }
 
@@ -29,5 +29,12 @@ export class AvailableDesignationsComponent implements OnInit {
       this.errorMessage = "Request failed.";
     });
 
+  }
+
+  onEditDesignation(designationId: string) {
+    console.log(`edit designation id is : ${designationId}`);
+  }
+  onDeleteDesignation(designationId: string) {
+    console.log(`delete designation id is : ${designationId}`);
   }
 }

@@ -11,7 +11,7 @@ export class AvailableStaffsComponent implements OnInit {
   staffList: IStaffDto[] = [];
   errorMessage: string | undefined;
 
-  constructor(private staffService:StaffService) { 
+  constructor(private staffService: StaffService) {
     this.getStaffs()
   }
 
@@ -31,12 +31,10 @@ export class AvailableStaffsComponent implements OnInit {
     });
 
   }
-  editStaff(id:string)
-  {
-console.log(id)
+  onEditStaff(staffId: string) {
+    console.log(`Edit Staff id is: ${staffId}`)
   }
-  deleteStaff(id:string)
-  {
-console.log(id)
+  onDeleteStaff(staffId: string) {
+    console.log(`Delete Staff id is: ${staffId}`)
   }
 }

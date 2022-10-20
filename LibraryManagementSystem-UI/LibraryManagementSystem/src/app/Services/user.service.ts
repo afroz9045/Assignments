@@ -6,15 +6,19 @@ import { Injectable } from '@angular/core';
 export class UserService {
   isAddStaff: boolean = false;
   user: string = '';
+  userName:string|null = '';
   parsedRole: any;
 
 
-  constructor() { }
+  constructor() { 
+    this.userRoleVerify()
+  }
 
   
   userRoleVerify() {
     debugger;
-    let role = localStorage.getItem("userTokenDecoded");
-    this.parsedRole = JSON.parse(role ?? '');
+    let role = localStorage.getItem("userRole");
+    this.userName = localStorage.getItem("userName");
+    this.parsedRole = role
   }
 }

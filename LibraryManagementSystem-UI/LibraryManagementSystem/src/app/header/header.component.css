@@ -43,7 +43,7 @@ ul .fa-arrow-right,
 .profileAndLogout {
   justify-content: flex-end;
 }
-.logout {
+.logout{
   cursor: pointer;
   align-self: center;
 }

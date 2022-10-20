@@ -28,18 +28,18 @@ export class SidebarComponent implements OnInit {
     console.log(loggedInStaff.FullName)
     this.staffName = loggedInStaff.FullName;
     this.staffRole = loggedInStaff.Role;
-    if (loggedInStaff.Role === 'Principle' || loggedInStaff.Role === 'Director') {
+    if (loggedInStaff=== 'Principle' || loggedInStaff=== 'Director') {
       this.isAddStaff = true;
       this.isAddDepartment =true;
       this.isAddDesignation =true;
       this.isBooksOutOfStock = true;
       this.isAddStudent = true;
     }
-    if(loggedInStaff.Role ==='Librarian'){
+    if(loggedInStaff==='Librarian'){
       this.isAddBook = true;
       this.isBooksOutOfStock = true;
     }
-    if(loggedInStaff.Role ==='HOD'){
+    if(loggedInStaff==='HOD'){
       this.isAddStudent = true;
     }
   }

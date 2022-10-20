@@ -1,17 +1,20 @@
 <table class="table container-fluid">
-    <thead>
-      <tr class="text-center">
-        <th scope="col">Department Id</th>
-        <th scope="col">Department Name</th>
-        <th scope="col">Actions</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let department of departmentList" class="text-center">
-        <td scope="row">{{department.deptId}}</td>
-        <td>{{department.departmentName}}</td>
-        <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Department Id</th>
+      <th scope="col">Department Name</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of departmentList" class="text-center">
+      <td scope="row">{{department.deptId}}</td>
+      <td>{{department.departmentName}}</td>
+      <td>
+        <i class="fa-solid fa-pen-to-square" (click)="onDepartmentEdit(department.deptId)"></i>
+        <i class="fa-solid fa-trash" (click)="onDepartmentDelete(department.deptId)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

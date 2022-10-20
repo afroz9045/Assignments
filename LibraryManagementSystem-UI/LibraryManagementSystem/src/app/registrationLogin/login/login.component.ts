@@ -15,9 +15,10 @@ export class LoginComponent implements OnInit {
   password:string = '';
   constructor(private authService:AuthService,private jwtDecode:JwtDecodeService,private router:Router) { }
 
+  userRole:string = ""
   ngOnInit(): void {
   }
-  
+  tokenInformation:any;
   onLogin(){
     let user:IUser={
        email: this.email,
@@ -27,13 +28,15 @@ export class LoginComponent implements OnInit {
       console.log(token);
 
       var decodedToken = this.jwtDecode.tokenDecode(token);
+      console.log(typeof decodedToken)
       const tokenDecoded = JSON.stringify(decodedToken)
-      var tokenInformation = JSON.parse(tokenDecoded);
-      console.log(tokenInformation['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']);
-      console.log(tokenInformation.Email);
-      console.log(tokenInformation);
+      this.tokenInformation = JSON.parse(tokenDecoded);
+      console.log(this.tokenInformation)
+      this.userRole = this.tokenInformation.Role
+      localStorage.setItem("userRole",this.userRole)
+      localStorage.setItem("userName",this.tokenInformation.FullName)
       localStorage.setItem('userToken',token)
-      localStorage.setItem('userTokenDecoded',tokenDecoded)
+
       this.router.navigate(['/home']);
     });
   }

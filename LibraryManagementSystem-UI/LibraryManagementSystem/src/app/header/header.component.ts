@@ -10,13 +10,13 @@ import { UserService } from '../Services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  staffName: string ='';
+  staffName: string | null = '';
   staffRole: string = '';
-  isBookIssue:boolean = false;
-  isBookReturn:boolean = false;
-  isPenaltyCheck:boolean = false;
+  isBookIssue: boolean = false;
+  isBookReturn: boolean = false;
+  isPenaltyCheck: boolean = false;
 
-  constructor(private router: Router,private userService:UserService) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.userRoleVerify();
@@ -25,28 +25,33 @@ export class HeaderComponent implements OnInit {
   logout() {
     debugger
     localStorage.removeItem("userToken");
-    localStorage.removeItem("userTokenDecoded");
+    localStorage.removeItem("userRole");
     this.router.navigateByUrl('/');
 
   }
-  getLoggedInStaffDetails(){
+  getLoggedInStaffDetails() {
     debugger
     var loggedInStaff = this.userService.parsedRole;
-    this.staffName = loggedInStaff.FullName;
-    this.staffRole = loggedInStaff.Role;
-    if(loggedInStaff.Role ==='Librarian'){
-     this.isBookIssue = true;
-     this.isBookReturn = true;
+    var loggedInStaffName = this.userService.userName;
+    console.log(`logged in staff is : ${loggedInStaff}`)
+    this.staffName = loggedInStaffName;
+    this.staffRole = loggedInStaff;
+    if (loggedInStaff == 'Librarian') {
+      this.isBookIssue = true;
+      this.isBookReturn = true;
     }
-    if(loggedInStaff.Role ==='Principle'||loggedInStaff.Role ==='Director'||loggedInStaff.Role ==='Librarian'){
+    if (loggedInStaff == 'Principle' || loggedInStaff == 'Director' || loggedInStaff == 'Librarian') {
       this.isPenaltyCheck = true;
     }
     console.log(this.staffName)
     console.log(this.staffRole)
+
+    console.log(`is book issue : ${this.isBookIssue}`)
+    console.log(`is book return : ${this.isBookReturn}`)
+    console.log(`is penaty Check : ${this.isPenaltyCheck}`)
   }
-  addBook() {
-    alert("Add Book Clicked!");
-  }
+  
+
 
 
 }
