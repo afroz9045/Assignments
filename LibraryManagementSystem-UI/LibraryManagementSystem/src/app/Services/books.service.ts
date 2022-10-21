@@ -61,6 +61,17 @@ export class BooksService {
     return this.http.put<IBooks>(environment.baseUrl + environment.updateBook + bookId, editBookDetails, { headers: headers })
   }
 
+  deleteBook(bookId:number){
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    let path = environment.baseUrl+environment.deleteBook+bookId
+    console.log(path);
+    return this.http.delete(path,{headers:headers})
+  }
   stockUpdate(updatedStock:bookStockUpdateVm):Observable<IBooks>{
     debugger
     let token = localStorage.getItem("userToken");

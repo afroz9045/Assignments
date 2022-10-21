@@ -22,8 +22,10 @@ export class AddBookComponent implements OnInit {
 
   addBook() {
     debugger
+    this.bookEdition == ""? this.bookEdition="Default":this.bookEdition
     let bookDetail: IBookVm = {
       authorName: this.authorName,
+      
       bookEdition: this.bookEdition,
       bookName: this.bookName,
       isbn: this.isbn

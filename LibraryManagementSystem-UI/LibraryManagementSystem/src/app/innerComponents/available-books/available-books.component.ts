@@ -85,6 +85,37 @@ export class AvailableBooksComponent implements OnInit {
 
   onDeleteBook(bookId: number) {
     console.log(`book id for delete is : ${bookId}`)
+    Swal.fire({
+      title: 'Delete Confirmation',
+      text: `Do you want to delete this book?`,
+      icon: 'question',
+      confirmButtonText: 'Yes',
+      showCancelButton:true  
+    }).then((result)=>{
+      debugger
+      console.log(result.isConfirmed)
+      if(result.isConfirmed){
+        this.booksService.deleteBook(bookId).subscribe((response)=>{
+          console.log(response)
+          Swal.fire({
+            title: 'Book Delete Status',
+            text: `Book with book id : ${bookId} deleted successfully!`,
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
+        },
+        err=>{
+          console.log(err)
+          Swal.fire({
+            title: 'Book Delete Status',
+            text: `${err.error} `,
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+          })
+          console.log(err.errorMessage)
+        })
+      }
+    })
   }
 }
 

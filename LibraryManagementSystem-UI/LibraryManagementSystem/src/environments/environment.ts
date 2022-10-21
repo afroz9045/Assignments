@@ -24,6 +24,7 @@ export const environment = {
   getBooksReturnedSubUrl: "returnbook",
   getPendingBooksReturn :"returnbook/pending-returns",
   updateBook:"books/",
+  deleteBook:"books/",
   bookStockUpdate:"books/stockupdate"
 };
 
