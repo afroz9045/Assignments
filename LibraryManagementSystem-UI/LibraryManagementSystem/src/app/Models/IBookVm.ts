@@ -1,7 +1,7 @@
 export interface IBookVm
 {
     bookName:string,
-    isbn:number,
+    isbn:any,
     authorName:string,
     bookEdition:string
 }

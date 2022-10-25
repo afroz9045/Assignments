@@ -53,6 +53,7 @@ export class BooksService {
   }
 
   editBook(bookId: number, editBookDetails: IBookVm): Observable<IBooks> {
+    debugger
     let token = localStorage.getItem("userToken");
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',

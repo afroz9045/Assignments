@@ -41,7 +41,6 @@ export class AddBookComponent implements OnInit {
             this.isAlertShow = false;
           },
             5000);
-
         }
         else {
           this.isAlertShow = true;

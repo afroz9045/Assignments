@@ -1,7 +1,7 @@
 export interface IBooks{
     bookId:number,
     bookName:string,
-    isbn:number,
+    isbn:any,
     authorName:string,
     bookEdition:string,
     stockAvailable:number,

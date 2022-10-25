@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { BookEditVm } from 'src/app/Models/BookEditVm';
 import { bookStockUpdateVm } from 'src/app/Models/BookStockUpdateVm';
 import { IBooks } from 'src/app/Models/IBooks';
+import { IBookVm } from 'src/app/Models/IBookVm';
 import { BooksService } from 'src/app/Services/books.service';
 import { UserService } from 'src/app/Services/user.service';
 import Swal from 'sweetalert2'
@@ -17,6 +19,13 @@ export class AvailableBooksComponent implements OnInit {
   errorMessage: string | undefined;
   stockUpdateMessage: String = "";
   isUserCanAlter: boolean = false;
+  bookId: any;
+
+  editedBookName: string = "";
+  editedIsbnNumber: string = "";
+  editedAuthorName: string = "";
+  editedBookEdition: string = "";
+
 
   constructor(private booksService: BooksService, private userService: UserService, private http: HttpClient) {
 
@@ -79,10 +88,51 @@ export class AvailableBooksComponent implements OnInit {
       })
   }
 
-  onEditBook(bookId: number) {
+  onEditBook(bookId: number, index: number) {
+    debugger
+    console.log(index)
     console.log(`book id for edit is : ${bookId}`)
+    this.bookId = bookId
+    this.editedAuthorName = this.bookList[index].authorName
+    this.editedBookEdition = this.bookList[index].bookEdition
+    this.editedBookName = this.bookList[index].bookName
+    this.editedIsbnNumber = this.bookList[index].isbn
   }
 
+  editBook() {
+    debugger
+    let editedBookDetails: IBookVm = {
+      authorName: this.editedAuthorName,
+      bookEdition: this.editedBookEdition,
+      bookName: this.editedBookName,
+      isbn: this.editedIsbnNumber
+    }
+
+    this.booksService.editBook(this.bookId, editedBookDetails).subscribe((response) => {
+      console.log(response)
+      if (response) {
+        Swal.fire({
+          title: 'Book details updated',
+          text: `Book with book id : ${this.bookId} updated successfully!`,
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        }).then(()=>{
+          this.getBooks();
+        })
+      }
+    },
+      err => {
+        console.log(err)
+        Swal.fire({
+          title: 'Book Delete Status',
+          text: `${err.error} `,
+          icon: 'warning',
+          confirmButtonText: 'Ok'
+        })
+        console.log(err.errorMessage)
+      }
+    )
+  }
   onDeleteBook(bookId: number) {
     console.log(`book id for delete is : ${bookId}`)
     Swal.fire({
@@ -90,12 +140,12 @@ export class AvailableBooksComponent implements OnInit {
       text: `Do you want to delete this book?`,
       icon: 'question',
       confirmButtonText: 'Yes',
-      showCancelButton:true  
-    }).then((result)=>{
+      showCancelButton: true
+    }).then((result) => {
       debugger
       console.log(result.isConfirmed)
-      if(result.isConfirmed){
-        this.booksService.deleteBook(bookId).subscribe((response)=>{
+      if (result.isConfirmed) {
+        this.booksService.deleteBook(bookId).subscribe((response) => {
           console.log(response)
           Swal.fire({
             title: 'Book Delete Status',
@@ -104,16 +154,16 @@ export class AvailableBooksComponent implements OnInit {
             confirmButtonText: 'Ok'
           })
         },
-        err=>{
-          console.log(err)
-          Swal.fire({
-            title: 'Book Delete Status',
-            text: `${err.error} `,
-            icon: 'warning',
-            confirmButtonText: 'Ok'
+          err => {
+            console.log(err)
+            Swal.fire({
+              title: 'Book Delete Status',
+              text: `${err.error} `,
+              icon: 'warning',
+              confirmButtonText: 'Ok'
+            })
+            console.log(err.errorMessage)
           })
-          console.log(err.errorMessage)
-        })
       }
     })
   }
