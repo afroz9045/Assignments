@@ -27,4 +27,14 @@ export class DesignationService {
     this.designationList = [];
     return this.http.get<IDesignations[]>(this.baseUrl + this.getDesignationSubUrl, { headers: headers })
   }
+
+  addDesignation(designation:any):Observable<IDesignations>{
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<IDesignations>(environment.baseUrl + environment.addDesignation,designation, { headers: headers })
+  }
 }

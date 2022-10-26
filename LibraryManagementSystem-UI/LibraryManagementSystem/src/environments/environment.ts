@@ -25,7 +25,11 @@ export const environment = {
   getPendingBooksReturn :"returnbook/pending-returns",
   updateBook:"books/",
   deleteBook:"books/",
-  bookStockUpdate:"books/stockupdate"
+  bookStockUpdate:"books/stockupdate",
+  departmentUpdate:"departments/",
+  deleteDepartment:"departments/",
+  addDepartment:"departments",
+  addDesignation:"designations"
 };
 
 /*

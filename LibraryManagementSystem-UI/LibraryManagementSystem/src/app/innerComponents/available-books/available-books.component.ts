@@ -107,7 +107,7 @@ export class AvailableBooksComponent implements OnInit {
       bookName: this.editedBookName,
       isbn: this.editedIsbnNumber
     }
-
+    console.log(editedBookDetails.bookName)
     this.booksService.editBook(this.bookId, editedBookDetails).subscribe((response) => {
       console.log(response)
       if (response) {
@@ -124,7 +124,7 @@ export class AvailableBooksComponent implements OnInit {
       err => {
         console.log(err)
         Swal.fire({
-          title: 'Book Delete Status',
+          title: 'Book Update Status',
           text: `${err.error} `,
           icon: 'warning',
           confirmButtonText: 'Ok'
@@ -152,6 +152,8 @@ export class AvailableBooksComponent implements OnInit {
             text: `Book with book id : ${bookId} deleted successfully!`,
             icon: 'success',
             confirmButtonText: 'Ok'
+          }).then(()=>{
+            this.getBooks();
           })
         },
           err => {

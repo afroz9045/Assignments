@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IReturnVm } from 'src/app/Models/IReturnVm';
 import { ReturnService } from 'src/app/Services/return.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-return-book',
@@ -28,10 +29,12 @@ export class ReturnBookComponent implements OnInit {
     let response = this.returnBookService.returnBook(returnDetail).subscribe(
       (returnBookResponse) => {
         if (returnBookResponse !== null || returnBookResponse !== undefined) {
-          setTimeout(() => {
-            this.returnSuccessAlert = true;
-            this.errorMsg = "Book return successfully!"
-          }, 10000);
+          Swal.fire({
+            title: 'Book Return Status',
+            text: `Book return successfully with issue id : ${this.issueId}`,
+            icon: 'success',
+            confirmButtonText: 'Ok'
+          })
           console.log(returnBookResponse.returnId);
           console.log(returnBookResponse.returnDate);
         }
@@ -39,8 +42,12 @@ export class ReturnBookComponent implements OnInit {
       err => {
         console.log(err.error)
         if (err.status ==400) {
-          this.isCheckPenaltyModal = true;
-          this.errorMsg = err.error
+          Swal.fire({
+            title: 'Book Return Status',
+            text: `Book is already returned with issue id : ${this.issueId}`,
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+          })
         }
       }
     )
