@@ -29,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { BooksIssuedComponent } from './innerComponents/books-issued/books-issued.component';
 import { PendingReturnsComponent } from './innerComponents/pending-returns/pending-returns.component';
-import{MaterialModule} from '../material-module'
+import{MaterialModule} from '../material-module';
+import { FilterPipe } from './Pipes/filter.pipe'
 
 const appRoutes: Routes = [
   // {path:'',component:AppComponent}, //localhost:4200
@@ -84,7 +85,8 @@ const appRoutes: Routes = [
     RegistrationComponent,
     HomeComponent,
     BooksIssuedComponent,
-    PendingReturnsComponent
+    PendingReturnsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

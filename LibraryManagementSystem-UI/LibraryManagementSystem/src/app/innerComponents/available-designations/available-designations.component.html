@@ -1,20 +1,40 @@
 <table class="table container-fluid text-center">
-    <thead>
-      <tr>
-        <th scope="col">Designation Id</th>
-        <th scope="col">Designation Name</th>
-        <th scope="col">Actions</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let designation of designationList">
-        <td scope="row">{{designation.designationId}}</td>
-        <td>{{designation.designationName}}</td>
-        <td>
-          <i class="fa-solid fa-pen-to-square" (click)="onEditDesignation(designation.designationId)"></i>
-          <i class="fa-solid fa-trash" (click)="onDeleteDesignation(designation.designationId)"></i>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">Designation Id</th>
+      <th scope="col">Designation Name</th>
+      <th scope="col" *ngIf="isAdmin">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let designation of designationList let i = index">
+      <td scope="row">{{designation.designationId}}</td>
+      <td>{{designation.designationName}}</td>
+      <td>
+        <i class="fa-solid fa-pen-to-square" (click)="onDesignationEdit(designation.designationId,i)" *ngIf="isAdmin" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+        <i class="fa-solid fa-trash" (click)="onDesignationDelete(designation.designationId)" *ngIf="isAdmin"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h1 class="modal-title fs-5 my-0 text-white" id="exampleModalLabel">Edit Designation</h1>
+        <i class="fa-solid fa-xmark text-white" data-bs-dismiss="modal" aria-label="Close"></i>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="designationName" id="designationName" placeholder="Designation name"
+          class="form-control my-3" [(ngModel)]="editedDesignationName">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editDesignation()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

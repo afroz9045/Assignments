@@ -47,3 +47,6 @@
 .login-card a{
     text-decoration: none;
 }
+.invalid-credentials{
+    padding-left: 40px;
+}

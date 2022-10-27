@@ -28,13 +28,32 @@ export class DesignationService {
     return this.http.get<IDesignations[]>(this.baseUrl + this.getDesignationSubUrl, { headers: headers })
   }
 
-  addDesignation(designation:any):Observable<IDesignations>{
+  onDesignationEdit(designationName: any, designationId: string): Observable<IDesignations> {
     debugger
     let token = localStorage.getItem("userToken");
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
-    return this.http.post<IDesignations>(environment.baseUrl + environment.addDesignation,designation, { headers: headers })
+    return this.http.put<IDesignations>(this.baseUrl + environment.designationUpdate + designationId, designationName, { headers: headers })
+  }
+
+  deleteDesignation(designationId: string) {
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.delete(environment.baseUrl + environment.deleteDesignation + designationId, { headers: headers })
+  }
+  addDesignation(designation: any): Observable<IDesignations> {
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<IDesignations>(environment.baseUrl + environment.addDesignation, designation, { headers: headers })
   }
 }

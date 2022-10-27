@@ -27,9 +27,13 @@ export const environment = {
   deleteBook:"books/",
   bookStockUpdate:"books/stockupdate",
   departmentUpdate:"departments/",
+  designationUpdate:"designations/",
   deleteDepartment:"departments/",
+  deleteDesignation:"designations/",
   addDepartment:"departments",
-  addDesignation:"designations"
+  addDesignation:"designations",
+  updateStaff:"staffs/",
+  deleteStaff:"staffs/"
 };
 
 /*

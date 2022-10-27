@@ -12,6 +12,7 @@
         <div class="login-input">
             <input type="password" name="email" placeholder="Password" required [(ngModel)]="password">
         </div>
+        <small class="text-danger invalid-credentials" *ngIf="isInvalidCredentials">{{errorMessage}}</small>
         <div class="login-btn text-center container">
             <button class="btn btn-success" type="submit" (click)="onLogin()">
                 Login

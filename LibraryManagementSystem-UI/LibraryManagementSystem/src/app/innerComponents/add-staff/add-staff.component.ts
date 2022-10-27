@@ -4,6 +4,7 @@ import { IStaffDto } from 'src/app/Models/IStaffDto';
 import { DesignationService } from 'src/app/Services/designation.service';
 import { IDesignations } from 'src/app/Models/IDesignations';
 import { StaffService } from 'src/app/Services/staff.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-staff',
@@ -56,10 +57,12 @@ export class AddStaffComponent implements OnInit {
       console.log(res);
       if(res!==null || res!==undefined)
       {
-        this.isHide=true;
-        setInterval(() => {
-          this.isHide=false;
-        }, 10000);
+        Swal.fire({
+          title: 'Delete Confirmation',
+          text: `Staff Added Successfully with staff id ${res.staffId}`,
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
       }
       
     })

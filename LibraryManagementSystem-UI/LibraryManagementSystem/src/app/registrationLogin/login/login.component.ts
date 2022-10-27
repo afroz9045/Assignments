@@ -11,20 +11,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string = '';
-  password:string = '';
-  constructor(private authService:AuthService,private jwtDecode:JwtDecodeService,private router:Router) { }
+  email: string = '';
+  password: string = '';
+  isInvalidCredentials: boolean = false;
+  errorMessage: string = ""
+  constructor(private authService: AuthService, private jwtDecode: JwtDecodeService, private router: Router) { }
 
-  userRole:string = ""
+  userRole: string = ""
   ngOnInit(): void {
   }
-  tokenInformation:any;
-  onLogin(){
-    let user:IUser={
-       email: this.email,
-       password: this.password
+  tokenInformation: any;
+  onLogin() {
+    let user: IUser = {
+      email: this.email,
+      password: this.password
     }
-    this.authService.login(user).subscribe((token:string)=>{
+    this.authService.login(user).subscribe((token: string) => {
       console.log(token);
 
       var decodedToken = this.jwtDecode.tokenDecode(token);
@@ -33,11 +35,18 @@ export class LoginComponent implements OnInit {
       this.tokenInformation = JSON.parse(tokenDecoded);
       console.log(this.tokenInformation)
       this.userRole = this.tokenInformation.Role
-      localStorage.setItem("userRole",this.userRole)
-      localStorage.setItem("userName",this.tokenInformation.FullName)
-      localStorage.setItem('userToken',token)
+      localStorage.setItem("userRole", this.userRole)
+      localStorage.setItem("userName", this.tokenInformation.FullName)
+      localStorage.setItem('userToken', token)
 
       this.router.navigate(['/home']);
+    }, (err) => {
+      console.log(err)
+      if (err.status === 400) {
+        this.isInvalidCredentials = true;
+        this.errorMessage = err.error
+        console.log("Error message is :" + this.errorMessage)
+      }
     });
   }
 }

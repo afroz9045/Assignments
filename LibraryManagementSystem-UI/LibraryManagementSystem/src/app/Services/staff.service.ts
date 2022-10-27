@@ -32,4 +32,14 @@ export class StaffService {
     });
     return this.http.get<IStaffDto>(environment.baseUrl + environment.getStaffSubUrl,{headers:headers})
   }
+
+  onStaffEdit(staffName:any, staffId:string): Observable<IStaff> {
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put<IStaff>(environment.baseUrl + environment.updateStaff + staffId, staffName, { headers: headers })
+  }
 }
