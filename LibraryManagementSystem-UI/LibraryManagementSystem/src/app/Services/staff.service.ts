@@ -42,4 +42,14 @@ export class StaffService {
     });
     return this.http.put<IStaff>(environment.baseUrl + environment.updateStaff + staffId, staffName, { headers: headers })
   }
+
+  deleteStaff(staffId: string) {
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.delete(environment.baseUrl + environment.deleteStaff + staffId, { headers: headers })
+  }
 }

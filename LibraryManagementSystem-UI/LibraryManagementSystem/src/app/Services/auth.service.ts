@@ -17,7 +17,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   
-  public login(user: IUser): Observable<string> {
+  login(user: IUser): Observable<string> {
     return this.http.post(environment.baseUrlAuth + environment.loginAuthSubUrl, user, { responseType: 'text' });
   }
+
+deleteUser(staffId:string){
+  return this.http.delete(environment.baseUrlAuth+environment.deleteUser+staffId)
+}
   }

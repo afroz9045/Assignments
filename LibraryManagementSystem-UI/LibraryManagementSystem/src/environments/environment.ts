@@ -33,7 +33,9 @@ export const environment = {
   addDepartment:"departments",
   addDesignation:"designations",
   updateStaff:"staffs/",
-  deleteStaff:"staffs/"
+  deleteStaff:"staffs/",
+  deleteUser:"auth/delete/",
+  addStudent:"students"
 };
 
 /*

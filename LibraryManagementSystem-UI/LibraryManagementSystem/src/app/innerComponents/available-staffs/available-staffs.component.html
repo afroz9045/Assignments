@@ -17,7 +17,7 @@
       <td>{{staff.designationId}}</td>
       <td><i class="fa-solid fa-pen-to-square" (click)="onStaffEdit(staff.staffId,i)" *ngIf="isAdmin"
           data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-        <i class="fa-solid fa-trash" (click)="onDeleteStaff(staff.staffId)" *ngIf="isAdmin"></i>
+        <i class="fa-solid fa-trash" (click)="onStaffDelete(staff.staffId)" *ngIf="isAdmin"></i>
       </td>
     </tr>
   </tbody>
