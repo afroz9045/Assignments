@@ -3,5 +3,5 @@ export interface IStudentDto{
     studentName:string,
     gender:string,
     studentDepartment:string,
-    departmentId:number
+    departmentId:string
 }

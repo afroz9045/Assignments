@@ -6,21 +6,47 @@
         <th scope="col">Gender</th>
         <th scope="col">Student Department</th>
         <th scope="col">Department Id</th>
-        <th scope="col">Actions</th>
-        
+        <th scope="col" *ngIf="isAdmin">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of studentList">
+      <tr *ngFor="let student of studentList let i = index">
         <td>{{student.studentId}}</td>
         <td>{{student.studentName}}</td>
         <td>{{student.gender}}</td>
         <td>{{student.studentDepartment}}</td>
         <td>{{student.departmentId}}</td>
         <td>
-          <i class="fa-solid fa-pen-to-square" (click)="onEditStudent(student.studentId)"></i>
-          <i class="fa-solid fa-trash" (click)="onDeleteStudent(student.studentId)"></i>
+          <i class="fa-solid fa-pen-to-square" (click)="onStudentEdit(student.studentId,i)" *ngIf="isAdmin" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+          <i class="fa-solid fa-trash" (click)="onDeleteStudent(student.studentId)" *ngIf="isAdmin"></i>
         </td>
       </tr>
     </tbody>
   </table>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h1 class="modal-title fs-5 my-0 text-white" id="exampleModalLabel">Edit Staff</h1>
+        <i class="fa-solid fa-xmark text-white" data-bs-dismiss="modal" aria-label="Close"></i>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="studentName" id="studentName" placeholder="Student name" class="form-control my-3"
+          [(ngModel)]="editedStudentName">
+          <select name="gender" id="gender" (change)="onDropDownChange($event)" class="form-control">
+            <option [value]="studentGender"  (change)="onDropDownChange($event)">1{{studentGender}}</option>
+            <option  *ngFor="let gender of genderListToShow" value={{gender}}>{{gender}}</option>
+          </select>
+        <input type="number" name="departmentId" id="departmentId" placeholder="Department id" class="form-control my-3" [(ngModel)]="editedDepartmentId">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearModalValues()">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editStudent()">Save
+          changes</button>
+      </div>
+    </div>
+  </div>
+</div>

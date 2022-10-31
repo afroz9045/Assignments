@@ -31,4 +31,14 @@ export class StudentService {
     });
     return this.http.post<IStudentDto>(environment.baseUrl + environment.addStudent,student,{headers:headers})
   }
+
+  onStudentEdit(updatedStudent:any, studentId:number): Observable<IStudentDto> {
+    debugger
+    let token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.put<IStudentDto>(environment.baseUrl + environment.updateStudent + studentId, updatedStudent, { headers: headers })
+  }
 }

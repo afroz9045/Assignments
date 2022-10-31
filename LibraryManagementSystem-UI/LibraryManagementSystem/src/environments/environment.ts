@@ -35,7 +35,8 @@ export const environment = {
   updateStaff:"staffs/",
   deleteStaff:"staffs/",
   deleteUser:"auth/delete/",
-  addStudent:"students"
+  addStudent:"students",
+  updateStudent:"students/"
 };
 
 /*
